@@ -14,6 +14,7 @@
                     "task_id": 1,
                     "name": "test1-task1",
                     "status": "pending",
+                    "description": "description de task1",
                     "comments": [
                         {
                             "comment_id": 1,
@@ -24,6 +25,11 @@
                             "comment_id": 2,
                             "message": "Another comment",
                             "member_id": 2
+                        },
+                        {
+                            "comment_id": 3,
+                            "message": "Another comment by same person",
+                            "member_id": 2
                         }
                     ]
                 },
@@ -31,11 +37,13 @@
                     "task_id": 2,
                     "name": "test1-task2",
                     "status": "ongoing",
+                    "description": "description de task2",
                     "comments": []
                 },
                 {
                     "task_id": 3,
                     "name": "test1-task3",
+                    "description": "description de task3",
                     "status": "done",
                     "comments": []
                 }
@@ -55,18 +63,21 @@
                     "task_id": 4,
                     "name": "test2-task4",
                     "status": "pending",
+                    "description": "description de task4",
                     "comments": []
                 },
                 {
                     "task_id": 5,
                     "name": "test2-task5",
                     "status": "pending",
+                    "description": "description de task5",
                     "comments": []
                 },
                 {
                     "task_id": 6,
                     "name": "test2-task6",
                     "status": "pending",
+                    "description": "description de task6",
                     "comments": []
                 }
             ]
