@@ -13,9 +13,9 @@ const Project = ({ project }) => {
         <div className='Project'>
             <h2>{project.name}</h2>
             <div>
-                <TaskList tasks={getTasksByStatus("pending")} />
-                <TaskList tasks={getTasksByStatus("ongoing")} />
-                <TaskList tasks={getTasksByStatus("done")} />
+                <TaskList tasks={getTasksByStatus(project.tasks, "pending")} />
+                <TaskList tasks={getTasksByStatus(project.tasks, "ongoing")} />
+                <TaskList tasks={getTasksByStatus(project.tasks, "done")} />
             </div>
         </div>
     );

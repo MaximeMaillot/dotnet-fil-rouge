@@ -5,6 +5,8 @@ import ProjectsView from '../../Views/ProjectsView/ProjectsView';
 import LoginView from '../../Views/LoginView/LoginView';
 import SignupView from '../../Views/SignupView/SignupView';
 import MembersView from '../../Views/MembersView/MembersView';
+import dataProjects from "../../data/test-projects.json";
+
 
 const Navbar = () => {
     return (
@@ -25,7 +27,7 @@ const Navbar = () => {
                     </button>
                 </div>
                 <Routes>
-                    <Route path='/projects' element={<ProjectsView />}></Route>
+                    <Route path='/projects' element={<ProjectsView projects={dataProjects.projects}/>}></Route>
                     <Route path='/members' element={<MembersView />}></Route>
                     <Route path='/login' element={<LoginView />}></Route>
                     <Route path='/signup' element={<SignupView />}></Route>
