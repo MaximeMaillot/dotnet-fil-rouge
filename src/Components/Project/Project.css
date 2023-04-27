@@ -1,0 +1,9 @@
+.Project {
+    width: 100%;
+}
+
+.Project-tasklist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}

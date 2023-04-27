@@ -1,0 +1,4 @@
+.ProjectsView {
+    display: flex;
+    flex-direction: row;
+}

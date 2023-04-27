@@ -12,10 +12,10 @@ const Project = ({ project }) => {
     return (
         <div className='Project'>
             <h2>{project.name}</h2>
-            <div>
-                <TaskList tasks={getTasksByStatus(project.tasks, "pending")} />
-                <TaskList tasks={getTasksByStatus(project.tasks, "ongoing")} />
-                <TaskList tasks={getTasksByStatus(project.tasks, "done")} />
+            <div className='Project-tasklist'>
+                <TaskList name={"A faire"} tasks={getTasksByStatus(project.tasks, "pending")} />
+                <TaskList name={"En cours"} tasks={getTasksByStatus(project.tasks, "ongoing")} />
+                <TaskList name={"Fini"} tasks={getTasksByStatus(project.tasks, "done")} />
             </div>
         </div>
     );

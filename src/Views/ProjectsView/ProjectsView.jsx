@@ -6,7 +6,7 @@ import Sidebar from '../../Components/Sidebar/Sidebar';
 
 const ProjectsView = ({projects, currentProject, setCurrentProject}) => {
     return (
-        <div>
+        <div className='ProjectsView'>
             <Sidebar projects={projects} setCurrentProject={setCurrentProject}/>
             {currentProject ? <Project project={currentProject}/> : <NoProject />}
         </div>

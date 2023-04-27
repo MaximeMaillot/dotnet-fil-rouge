@@ -4,7 +4,7 @@ import ProjectLabel from '../ProjectLabel/ProjectLabel';
 
 const ProjectList = ({projects, setCurrentProject}) => {
     return (
-        <div>
+        <div className='ProjectList'>
             {projects ? projects.map((project) => {
                 return <ProjectLabel key={project.project_id} project={project} setCurrentProject={setCurrentProject} />
             }) : undefined}

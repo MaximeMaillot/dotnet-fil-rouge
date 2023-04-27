@@ -4,7 +4,7 @@ import "./Task.css";
 const Task = ({task}) => {
     return (
         <div className='Task'>
-            nom : {task.name}
+            {task.name}
         </div>
     );
 };

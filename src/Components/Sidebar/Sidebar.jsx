@@ -4,7 +4,7 @@ import ProjectList from '../ProjectList/ProjectList';
 
 const Sidebar = ({projects, setCurrentProject}) => {
     return (
-        <div>
+        <div className='Sidebar'>
             <div>Sidebar</div>
             <ProjectList projects={projects} setCurrentProject={setCurrentProject} />
         </div>

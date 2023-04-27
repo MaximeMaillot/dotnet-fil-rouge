@@ -1,0 +1,4 @@
+.TaskList {
+    display: flex;
+    flex-direction: column;
+}
