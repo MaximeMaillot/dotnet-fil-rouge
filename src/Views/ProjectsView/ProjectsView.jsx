@@ -1,7 +1,7 @@
 import React from 'react';
-import "./ProjetView.css";
+import "./ProjectsView.css";
 
-const ProjetView = () => {
+const ProjectsView = () => {
     return (
         <div>
             Projet View
@@ -9,4 +9,4 @@ const ProjetView = () => {
     );
 };
 
-export default ProjetView;
+export default ProjectsView;
