@@ -2,11 +2,11 @@ import React from 'react';
 import "./Sidebar.css";
 import ProjectList from '../ProjectList/ProjectList';
 
-const Sidebar = ({projects}) => {
+const Sidebar = ({projects, setCurrentProject}) => {
     return (
         <div>
             <div>Sidebar</div>
-            <ProjectList projects={projects}/>
+            <ProjectList projects={projects} setCurrentProject={setCurrentProject} />
         </div>
     );
 };

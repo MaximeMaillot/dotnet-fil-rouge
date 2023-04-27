@@ -6,9 +6,11 @@ import LoginView from '../../Views/LoginView/LoginView';
 import SignupView from '../../Views/SignupView/SignupView';
 import MembersView from '../../Views/MembersView/MembersView';
 import dataProjects from "../../data/test-projects.json";
-
+import { useState } from 'react';
 
 const Navbar = () => {
+    const [currentProject, setCurrentProject] = useState(undefined);
+
     return (
         <div className='Navbar'>
             <BrowserRouter>
@@ -27,7 +29,7 @@ const Navbar = () => {
                     </button>
                 </div>
                 <Routes>
-                    <Route path='/projects' element={<ProjectsView projects={dataProjects.projects}/>}></Route>
+                    <Route path='/projects' element={<ProjectsView projects={dataProjects.projects} currentProject={currentProject} setCurrentProject={setCurrentProject}/>}></Route>
                     <Route path='/members' element={<MembersView />}></Route>
                     <Route path='/login' element={<LoginView />}></Route>
                     <Route path='/signup' element={<SignupView />}></Route>
