@@ -11,25 +11,30 @@
             ],
             "tasks": [
                 {
+                    "task_id": 1,
                     "name": "test1-task1",
                     "status": "pending",
                     "comments": [
                         {
+                            "comment_id": 1,
                             "message": "This is a test comment",
                             "member_id": 1
                         },
                         {
+                            "comment_id": 2,
                             "message": "Another comment",
                             "member_id": 2
                         }
                     ]
                 },
                 {
+                    "task_id": 2,
                     "name": "test1-task2",
                     "status": "ongoing",
                     "comments": []
                 },
                 {
+                    "task_id": 3,
                     "name": "test1-task3",
                     "status": "done",
                     "comments": []
@@ -47,17 +52,20 @@
             ],
             "tasks": [
                 {
-                    "name": "test2-task1",
+                    "task_id": 4,
+                    "name": "test2-task4",
                     "status": "pending",
                     "comments": []
                 },
                 {
-                    "name": "test2-task2",
+                    "task_id": 5,
+                    "name": "test2-task5",
                     "status": "pending",
                     "comments": []
                 },
                 {
-                    "name": "test2-task3",
+                    "task_id": 6,
+                    "name": "test2-task6",
                     "status": "pending",
                     "comments": []
                 }
