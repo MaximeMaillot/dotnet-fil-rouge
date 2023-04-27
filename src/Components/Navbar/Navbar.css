@@ -1,4 +1,26 @@
 .Navbar {
     width: 100vw;
-    height: 100vh;
+    height: 6vh;
+    font-family: 'Times New Roman', Times, serif;
+    background-color: aquamarine;
+}
+
+.logo{
+    width: 5%;
+    height: auto;
+    margin-top: 18px;
+
+}
+
+.bouton1 > a{
+    height: 100%;
+    background-color: white;
+    border: none;
+    font-size: 14px;
+    text-decoration: none;
+
+}
+
+.bouton2{
+    
 }

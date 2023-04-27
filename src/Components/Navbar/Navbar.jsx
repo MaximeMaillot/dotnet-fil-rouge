@@ -15,16 +15,14 @@ const Navbar = () => {
         <div className='Navbar'>
             <BrowserRouter>
                 <div>
-                    <button>
-                        <Link to="/projects" >Projets</Link>
+                        <Link to="/home"><img src="/logo-trallo.jpg" alt="Logo Trallo" className='logo'/></Link>
+                    <button className='bouton1'>
+                        <Link to="/projects">Espaces de travail </Link>
                     </button>
-                    <button>
-                        <Link to="/members">Membres</Link>
-                    </button>
-                    <button>
+                    <button className='bouton2'>
                         <Link to="/login">Se connecter</Link>
                     </button>
-                    <button>
+                    <button className='bouton2'>
                         <Link to="/signup">Inscription</Link>
                     </button>
                 </div>
