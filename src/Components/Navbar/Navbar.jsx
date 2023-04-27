@@ -6,9 +6,9 @@ import LoginView from '../../Views/LoginView/LoginView';
 
 const Navbar = () => {
     return (
-        <div>
+        <div className='Navbar'>
             <BrowserRouter>
-                <div className='Navbar-navbar'>
+                <div>
                     <button>
                         <Link to="/" >Projet</Link>
                     </button>
@@ -18,13 +18,12 @@ const Navbar = () => {
                 </div>
                 <Routes>
                     <Route path='/' element={<ProjetView />}></Route>
-                    <Route path='/connexion' element={<LoginView />}></Route>
+                    <Route path='/login' element={<LoginView />}></Route>
                     <Route path='/*' element={<ProjetView />}></Route>
                 </Routes>
                 <div>
                     <Outlet />
                 </div>
-                <Footer />
             </BrowserRouter >
         </div >
     );
