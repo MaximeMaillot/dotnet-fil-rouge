@@ -1,0 +1,67 @@
+{
+    "projects":[
+        {
+            "project_id": 1,
+            "name": "test1",
+            "admins": [
+                1
+            ],
+            "members": [
+                1, 2, 3
+            ],
+            "tasks": [
+                {
+                    "name": "test1-task1",
+                    "status": "pending",
+                    "comments": [
+                        {
+                            "message": "This is a test comment",
+                            "member_id": 1
+                        },
+                        {
+                            "message": "Another comment",
+                            "member_id": 2
+                        }
+                    ]
+                },
+                {
+                    "name": "test1-task2",
+                    "status": "ongoing",
+                    "comments": []
+                },
+                {
+                    "name": "test1-task3",
+                    "status": "done",
+                    "comments": []
+                }
+            ]
+        },
+        {
+            "project_id": 2,
+            "name": "test2",
+            "admins": [
+                1
+            ],
+            "members": [
+                1, 2
+            ],
+            "tasks": [
+                {
+                    "name": "test2-task1",
+                    "status": "pending",
+                    "comments": []
+                },
+                {
+                    "name": "test2-task2",
+                    "status": "pending",
+                    "comments": []
+                },
+                {
+                    "name": "test2-task3",
+                    "status": "pending",
+                    "comments": []
+                }
+            ]
+        }
+    ]
+}
