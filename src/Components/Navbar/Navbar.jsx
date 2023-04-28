@@ -24,21 +24,19 @@ const Navbar = () => {
     const [currentProject, setCurrentProject] = useState(getProjectById(projects, id));
 
     return (
-        <div className='Navbar'>
+        <div >
             <BrowserRouter>
-                <div>
-                    <button>
-                        <Link to="/projects" >Projets</Link>
-                    </button>
-                    <button>
-                        <Link to="/members">Membres</Link>
-                    </button>
-                    <button>
+                <div className='Navbar'>
+                        <Link to="/home"><img src="/logo-trallo.jpg" alt="Logo Trallo" className='logo'/></Link>
+                    <div className='bouton1'>
+                        <Link to="/projects">Espaces de travail </Link>
+                    </div>
+                    <div className='bouton2'>
                         <Link to="/login">Se connecter</Link>
-                    </button>
-                    <button>
+                    </div>
+                    <div className='bouton3'>
                         <Link to="/signup">Inscription</Link>
-                    </button>
+                    </div>
                 </div>
                 <Routes>
                     <Route path='/projects' element={<ProjectsView projects={projects} setProjects={setProjects} currentProject={currentProject} setCurrentProject={setCurrentProject} />}></Route>
