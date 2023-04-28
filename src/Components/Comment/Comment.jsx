@@ -4,7 +4,7 @@ import "./Comment.css";
 const Comment = ({comment}) => {
     return (
         <div className='Comment'>
-            nom : {comment.name}
+            {comment.member_id} : {comment.message}
         </div>
     );
 };
