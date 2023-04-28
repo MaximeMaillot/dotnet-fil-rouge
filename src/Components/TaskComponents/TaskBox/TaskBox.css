@@ -1,0 +1,13 @@
+.TaskBox {
+    z-index: 1;
+    position: fixed;
+    top: 10%;
+    left: 25%;
+    width: 50%;
+    height: 80%;
+    /*optional bg color*/
+    background-color: #DFD3C3;
+    /*the following isn't necessary but will help center everything once we add buttons*/
+    display: flex;
+    flex-direction: column;
+  }
