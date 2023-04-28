@@ -3,6 +3,7 @@
         {
             "project_id": 1,
             "name": "test1",
+            "description": "description de project test1",
             "admins": [
                 1
             ],
@@ -52,6 +53,7 @@
         {
             "project_id": 2,
             "name": "test2",
+            "description": "description de project test2",
             "admins": [
                 1
             ],

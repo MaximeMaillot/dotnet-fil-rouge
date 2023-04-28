@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import "./CreateTask.css";
-import TaskBoxDescription from '../TaskBoxDescription/TaskBoxDescription';
+import DescriptionInput from '../../DescriptionInput/DescriptionInput';
 
 const CreateTask = ({task, setTaskBoxDisplay}) => {
     const [description, setDescription] = useState("")
@@ -9,7 +9,7 @@ const CreateTask = ({task, setTaskBoxDisplay}) => {
             <div>Liste des membres</div>
             <div>Modifier membres</div>
             <h3>{task.name}</h3>
-            <TaskBoxDescription description={description} setDescription={setDescription}/>
+            <DescriptionInput description={description} setDescription={setDescription}/>
             <button onClick={() => {setTaskBoxDisplay(false)}}>Fermer</button>
         </div>
     );

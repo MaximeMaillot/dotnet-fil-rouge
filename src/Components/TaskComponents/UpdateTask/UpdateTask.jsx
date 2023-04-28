@@ -2,7 +2,7 @@ import React from 'react';
 import "./UpdateTask.css";
 import CommentInput from '../../CommentInput/CommentInput';
 import Comment from '../../Comment/Comment';
-import TaskBoxDescription from '../TaskBoxDescription/TaskBoxDescription';
+import DescriptionInput from '../../DescriptionInput/DescriptionInput';
 import { useState } from 'react';
 
 const UpdateTask = ({task, setTaskBoxDisplay}) => {
@@ -12,7 +12,7 @@ const UpdateTask = ({task, setTaskBoxDisplay}) => {
             <div>Liste des membres</div>
             <div>Modifier membres</div>
             <h3>{task.name}</h3>
-            <TaskBoxDescription description={description} setDescription={setDescription} />
+            <DescriptionInput description={description} setDescription={setDescription} />
             <span>Modifier</span>
             <div>Commentaires</div>
             <CommentInput />
