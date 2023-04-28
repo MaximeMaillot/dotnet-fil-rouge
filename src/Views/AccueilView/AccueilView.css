@@ -1,0 +1,146 @@
+*{
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+}
+.fond{
+    background-color: #F8EDE3;
+    width: 100vw;
+    height: 100vh;
+}
+.tampon{
+    background-color: #F8EDE3;
+    width: 100vw;
+    height: 6vh;
+}
+.bandeau-blanc{
+    width: 100vw;
+    height: auto;
+    margin-top: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 5px 10px 5px rgba(124, 124, 124, 0.2);
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: center; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
+    align-self: center; /* centrer le bouton verticalement dans la case de la grille */
+}
+
+.prez{
+    display: flex; 
+    justify-content: top;
+    align-items: flex-start; 
+    align-self: center; 
+    width: 50vw;
+    height: auto;
+}
+.groslogo{
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start; 
+    align-self: top; 
+    justify-self : start;
+    margin: 10px;
+}
+.titre{
+    font-size: 20px;
+    font-weight: bold;
+    color: #85586F;
+}
+.texte{
+    margin: 10px;
+    font-size: 14px;
+}
+
+.initiation{
+    display: flex; 
+    justify-content: top;
+    align-items: flex-start; 
+    align-self: center; 
+    width: 40%;
+    height: auto;
+    border: #85586F 1px solid;
+    margin-top: 20px ;
+    margin-left: 100px;
+}
+.groslogo2{
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start; 
+    align-self: top; 
+    justify-self : start;
+    margin: 10px;
+    height: 50px;
+}
+.titre2{
+    font-size: 16px;
+    font-weight: bold;
+    color: #85586F;
+}
+.texte2{
+    margin: 10px;
+    font-size: 12px;
+}
+.initiation-illus{
+    display: flex; 
+    justify-content: top;
+    align-items: flex-start; 
+    align-self: center; 
+    width: 40%;
+    height: auto;
+    border: #85586F 1px solid;
+    margin-top: 20px ;
+    margin-left: 100px;
+
+}
+
+.illus{
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start; 
+    align-self: top; 
+    justify-self : start;
+    margin: 10px;
+    height: 250px;
+}
+
+/* .prez{
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr 2fr;
+    border: black 1px solid;
+    width: 50vw;
+    height: auto;
+}
+.groslogo{
+    grid-column-start: 1;
+    grid-row-start: 1;
+    grid-column-end: 1;
+    grid-row-end: 1;
+
+    margin: 10px;
+}
+.titre{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column-end: 3;
+    grid-row-end: 3;
+    font-size: 20px;
+    font-weight: bold;
+    color: #85586F;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: top;
+    justify-self : end;
+}
+.texte{
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-column-end: 3;
+    grid-row-end: 3;
+    margin: 10px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    align-self: top; 
+    justify-self : end;
+} */
