@@ -1,16 +1,19 @@
 import React, { useState } from 'react';
 import "./CreateTask.css";
 import DescriptionInput from '../../DescriptionInput/DescriptionInput';
+import MemberTaskList from '../MemberTaskList/MemberTaskList';
 
-const CreateTask = ({task, setTaskBoxDisplay}) => {
+const CreateTask = ({members = [], setTaskBoxDisplay}) => {
     const [description, setDescription] = useState("")
     return (
         <div>
-            <div>Liste des membres</div>
-            <div>Modifier membres</div>
-            <h3>{task.name}</h3>
+            <MemberTaskList members={members} />
+            <div>
+            <label> Nom de la tâche
+            <input type='text'></input>
+            </label></div>
             <DescriptionInput description={description} setDescription={setDescription}/>
-            <button onClick={() => {setTaskBoxDisplay(false)}}>Fermer</button>
+            <div><button>Créer</button><button onClick={() => {setTaskBoxDisplay(false)}}>Fermer</button></div>
         </div>
     );
 };

@@ -4,13 +4,13 @@ import CommentInput from '../../CommentInput/CommentInput';
 import Comment from '../../Comment/Comment';
 import DescriptionInput from '../../DescriptionInput/DescriptionInput';
 import { useState } from 'react';
+import MemberTaskList from '../MemberTaskList/MemberTaskList';
 
-const UpdateTask = ({task, setTaskBoxDisplay}) => {
+const UpdateTask = ({members, task, setTaskBoxDisplay}) => {
     const [description, setDescription] = useState(task.description)
     return (
         <div className='UpdateTask'>
-            <div>Liste des membres</div>
-            <div>Modifier membres</div>
+            <MemberTaskList members={members} />
             <h3>{task.name}</h3>
             <DescriptionInput description={description} setDescription={setDescription} />
             <span>Modifier</span>

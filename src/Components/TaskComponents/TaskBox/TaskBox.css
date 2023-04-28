@@ -6,7 +6,7 @@
     width: 50%;
     height: 80%;
     /*optional bg color*/
-    background-color: #DFD3C3;
+    background-color: #D0B8A8;
     /*the following isn't necessary but will help center everything once we add buttons*/
     display: flex;
     flex-direction: column;
