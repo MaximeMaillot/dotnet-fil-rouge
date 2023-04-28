@@ -2,8 +2,8 @@
     "projects":[
         {
             "project_id": 1,
-            "name": "test1",
-            "description": "description de project test1",
+            "name": "Projet fil rouge",
+            "description": "Je suis une déscription du projet fil rouge lalalala",
             "admins": [
                 1
             ],
@@ -13,38 +13,38 @@
             "tasks": [
                 {
                     "task_id": 1,
-                    "name": "test1-task1",
+                    "name": "Faire du beau code",
                     "status": "pending",
-                    "description": "description de task1",
+                    "description": "Un jour peut être",
                     "comments": [
                         {
                             "comment_id": 1,
-                            "message": "This is a test comment",
+                            "message": "Je suis d'accord",
                             "member_id": 1
                         },
                         {
                             "comment_id": 2,
-                            "message": "Another comment",
+                            "message": "Faut tout donner",
                             "member_id": 2
                         },
                         {
                             "comment_id": 3,
-                            "message": "Another comment by same person",
+                            "message": "Mouais",
                             "member_id": 2
                         }
                     ]
                 },
                 {
                     "task_id": 2,
-                    "name": "test1-task2",
+                    "name": "Déprimer",
                     "status": "ongoing",
-                    "description": "description de task2",
+                    "description": "Ca on sait faire",
                     "comments": []
                 },
                 {
                     "task_id": 3,
-                    "name": "test1-task3",
-                    "description": "description de task3",
+                    "name": "Devenir alcoolique",
+                    "description": "Je suis sobre depuis 3 jours madame",
                     "status": "done",
                     "comments": []
                 }
@@ -52,8 +52,8 @@
         },
         {
             "project_id": 2,
-            "name": "test2",
-            "description": "description de project test2",
+            "name": "Projet test",
+            "description": "Un p'tit projet test",
             "admins": [
                 1
             ],
@@ -63,23 +63,23 @@
             "tasks": [
                 {
                     "task_id": 4,
-                    "name": "test2-task4",
+                    "name": "Faire le projet test",
                     "status": "pending",
-                    "description": "description de task4",
+                    "description": "On est fort",
                     "comments": []
                 },
                 {
                     "task_id": 5,
-                    "name": "test2-task5",
+                    "name": "Comprendre le projet test",
                     "status": "pending",
-                    "description": "description de task5",
+                    "description": "Compliqué",
                     "comments": []
                 },
                 {
                     "task_id": 6,
-                    "name": "test2-task6",
+                    "name": "Devenir le projet test",
                     "status": "pending",
-                    "description": "description de task6",
+                    "description": "Ne faisons qu'un avec le code",
                     "comments": []
                 }
             ]
