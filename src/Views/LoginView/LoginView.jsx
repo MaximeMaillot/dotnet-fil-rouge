@@ -8,12 +8,12 @@ members = members.members;
 function connection() {
     let loginName = document.querySelector('#loginName');
     let motDePasse = document.querySelector('#motDePasse');
-    if (loginName.value == "" || motDePasse.value == "") {
+    if (loginName.value === "" || motDePasse.value === "") {
         console.log("saisir")
     } else {
         for (let i = 0; i < members.length; i++) {
-            if (loginName.value == members[i].name) {
-                if (motDePasse.value == members[i].password) {
+            if (loginName.value === members[i].name) {
+                if (motDePasse.value === members[i].password) {
                     console.log("correct")
                     return;
                 }

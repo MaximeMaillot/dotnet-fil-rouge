@@ -5,29 +5,16 @@ import ProjectsView from '../../Views/ProjectsView/ProjectsView';
 import LoginView from '../../Views/LoginView/LoginView';
 import SignupView from '../../Views/SignupView/SignupView';
 import MembersView from '../../Views/MembersView/MembersView';
-import dataProjects from "../../data/test-projects.json";
-import { useState } from 'react';
-
-function getProjectById(projects, id) {
-    let project = []
-    if (projects && projects.length > 0) {
-        project = projects.filter((project) => {
-            return project.project_id == id
-        })
-    }
-    return project.length == 1 ? project[0] : undefined
-}
+import { useSelector } from 'react-redux';
 
 const Navbar = () => {
-    const [projects, setProjects] = useState(dataProjects.projects);
-    const id = localStorage.getItem("currentProjectId")
-    const [currentProject, setCurrentProject] = useState(getProjectById(projects, id));
+    const projects = useSelector(state => state.projects)
 
     return (
         <div >
             <BrowserRouter>
                 <div className='Navbar'>
-                        <Link to="/home"><img src="/logo-trallo.jpg" alt="Logo Trallo" className='logo'/></Link>
+                    <Link to="/home"><img src="/logo-trallo.jpg" alt="Logo Trallo" className='logo' /></Link>
                     <div className='bouton1'>
                         <Link to="/projects">Espaces de travail </Link>
                     </div>
@@ -39,7 +26,7 @@ const Navbar = () => {
                     </div>
                 </div>
                 <Routes>
-                    <Route path='/projects' element={<ProjectsView projects={projects} setProjects={setProjects} currentProject={currentProject} setCurrentProject={setCurrentProject} />}></Route>
+                    <Route path='/projects' element={<ProjectsView projects={projects} />}></Route>
                     <Route path='/members' element={<MembersView />}></Route>
                     <Route path='/login' element={<LoginView />}></Route>
                     <Route path='/signup' element={<SignupView />}></Route>

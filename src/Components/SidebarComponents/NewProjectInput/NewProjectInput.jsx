@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './NewProjectInput.css';
 
-const NewProjectInput = ({setCreateProject}) => {
+const NewProjectInput = ({ setCreateProject }) => {
     return (
         <>
             <input type='text' onKeyUp={(event) => {
-                if (event.key == "Enter") {
+                if (event.key === "Enter") {
                     setCreateProject(false)
                 }
             }} placeholder='Nom de projet'></input>

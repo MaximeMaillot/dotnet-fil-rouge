@@ -1,11 +1,14 @@
 import React from 'react';
 import "./ProjectLabel.css";
 
-const ProjectLabel = ({project, setCurrentProject}) => {
+import { useDispatch } from 'react-redux';
+import { setCurrentProject } from '../../../redux/slices/projectSlice';
+
+const ProjectLabel = ({ project }) => {
+    const dispatch = useDispatch();
     return (
         <div className='ProjectLabel' onClick={() => {
-            setCurrentProject(project)
-            localStorage.setItem('currentProjectId', project.project_id);
+            dispatch(setCurrentProject(project.project_id))
         }}>
             {project.name}
         </div>
