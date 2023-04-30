@@ -28,12 +28,12 @@ const UpdateTask = ({ members, task, setTaskBoxDisplay, status }) => {
                 return <Comment key={comment.comment_id} comment={comment} />
             })}
             <button onClick={() => {
-                dispatch(updateTask({
-                    task_id: task.task_id,
-                    status: dropDownStatus,
-                    description: description,
-
-                }));
+                let updatedTask = { ...task }
+                updatedTask.status = dropDownStatus
+                updatedTask.description = description
+                dispatch(updateTask(
+                    updatedTask
+                ));
                 setTaskBoxDisplay(false)
             }}>Mettre à jour</button>
             <button onClick={() => { setTaskBoxDisplay(false) }}>Fermer</button>

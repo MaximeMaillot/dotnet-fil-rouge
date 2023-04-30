@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import membersData from './../../data/test-members.json';
 
 export const memberSlice = createSlice({

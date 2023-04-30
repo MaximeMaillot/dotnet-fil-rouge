@@ -2,19 +2,19 @@
     "members": [
         {
             "member_id": 1,
-            "name": "Fred",
+            "username": "Fred",
             "password": "1111",
             "email": "fred@test.com"
         },
         {
             "member_id": 2,
-            "name": "Avril",
+            "username": "Avril",
             "password": "2222",
             "email": "avril@test.com"
         },
         {
             "member_id": 3,
-            "name": "Maxime",
+            "username": "Maxime",
             "password": "3333",
             "email": "max@text.com"
         }
