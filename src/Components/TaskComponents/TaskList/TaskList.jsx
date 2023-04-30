@@ -18,10 +18,10 @@ const TaskList = ({ name, status, project }) => {
         <div className='TaskList'>
             <h3 className='TaskList-title'>{name}</h3>
             {tasks.map((task) => {
-                return <Task key={task.task_id} members={project.members} task={task} />
+                return <Task key={task.task_id} task={task} status={status} />
             })}
             <FontAwesomeIcon className='TaskList-icon' icon={faPlus} onClick={() => { setTaskBoxDisplay(true) }} />
-            {taskBoxDisplay ? <TaskBox type={'create'} setTaskBoxDisplay={setTaskBoxDisplay} /> : undefined}
+            {taskBoxDisplay ? <TaskBox status={status} type={'create'} setTaskBoxDisplay={setTaskBoxDisplay} /> : undefined}
         </div>
     );
 };

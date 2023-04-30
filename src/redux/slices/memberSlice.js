@@ -25,7 +25,7 @@ export const memberSlice = createSlice({
             }
             return state
         },
-        disconnectMember: (state, action) => {
+        disconnectMember: (state) => {
             state.currentMemberId = -1
             return state
         }

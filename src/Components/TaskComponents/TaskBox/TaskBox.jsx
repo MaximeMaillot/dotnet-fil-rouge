@@ -3,21 +3,21 @@ import './TaskBox.css';
 import CreateTask from '../CreateTask/CreateTask';
 import UpdateTask from '../UpdateTask/UpdateTask';
 
-function populateTaskBoxWithType(task, type, setTaskBoxDisplay, members) {
+function populateTaskBoxWithType(task, type, setTaskBoxDisplay, status) {
     switch (type) {
         case "create":
-            return <CreateTask setTaskBoxDisplay={setTaskBoxDisplay}/>
+            return <CreateTask status={status} setTaskBoxDisplay={setTaskBoxDisplay} />
         case "update":
-            return <UpdateTask task={task} members={members} setTaskBoxDisplay={setTaskBoxDisplay}/>
+            return <UpdateTask status={status} task={task} setTaskBoxDisplay={setTaskBoxDisplay} />
         default:
             return undefined;
     }
 }
 
-const TaskBox = ({ task, type, setTaskBoxDisplay, members }) => {
+const TaskBox = ({ task, type, setTaskBoxDisplay, status }) => {
     return (
         <div className='TaskBox'>
-            {populateTaskBoxWithType(task,type, setTaskBoxDisplay, members)}
+            {populateTaskBoxWithType(task, type, setTaskBoxDisplay, status)}
         </div>
     );
 };
