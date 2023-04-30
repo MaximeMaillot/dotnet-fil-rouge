@@ -17,7 +17,8 @@ export const projectSlice = createSlice({
             return state
         },
         updateProject: (state, action) => {
-            // TODO
+            let index = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
+            state.projects[index] = action.payload
             return state
         },
         removeProject: (state, action) => {
@@ -37,7 +38,8 @@ export const projectSlice = createSlice({
             return state
         },
         addMember: (state, action) => {
-            // TODO
+            let index = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
+            state.projects[index].members.push(action.payload)
             return state
         },
         updateMember: (state, action) => {
@@ -45,7 +47,10 @@ export const projectSlice = createSlice({
             return state
         },
         removeMember: (state, action) => {
-            // TODO
+            let index = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
+            state.projects[index].members = state.projects[index].members.filter((member) => {
+                return member != action.payload
+            })
             return state
         },
         addTask: (state, action) => {
@@ -64,7 +69,10 @@ export const projectSlice = createSlice({
             return state
         },
         removeTask: (state, action) => {
-            // TODO
+            let indexProject = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
+            state.projects[indexProject].tasks = state.projects[indexProject].tasks.filter((task) => {
+                task.task_id != action.payload
+            })
             return state
         },
         addComment: (state, action) => {
