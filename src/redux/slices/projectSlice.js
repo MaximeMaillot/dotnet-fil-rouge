@@ -71,7 +71,7 @@ export const projectSlice = createSlice({
         removeTask: (state, action) => {
             let indexProject = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
             state.projects[indexProject].tasks = state.projects[indexProject].tasks.filter((task) => {
-                task.task_id != action.payload
+                return task.task_id != action.payload
             })
             return state
         },
