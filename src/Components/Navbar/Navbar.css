@@ -5,12 +5,13 @@
     /*grid-template-rows: 1fr;*/
     grid-template-rows: 1fr;
     grid-gap: 5px;
-    width: 100vw;
+    flex: 0 1 auto;
     /*height: 5vh;
     font-family: 'Atkinson Hyperlegible', sans-serif;*/
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-color: white;
 }
+
 a {
     text-decoration: none;
     color: inherit;
