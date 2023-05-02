@@ -68,6 +68,17 @@ export const projectSlice = createSlice({
             state.projects[indexProject].tasks[indexTask] = task
             return state
         },
+        switchTask: (state, action) => {
+            const indexProject = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
+            console.log(action.payload)
+            if (action.payload.source.droppableId !== action.payload.destination.droppableId) {
+                const taskId = parseInt(action.payload.draggableId)
+                const indexTask = state.projects[indexProject].tasks.findIndex((task) => task.task_id === taskId)
+                console.log("taskId", taskId, "indexTask", indexTask)
+                state.projects[indexProject].tasks[indexTask].status = action.payload.destination.droppableId;
+            }
+            return state;
+        },
         removeTask: (state, action) => {
             let indexProject = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
             state.projects[indexProject].tasks = state.projects[indexProject].tasks.filter((task) => {
@@ -101,6 +112,7 @@ export const {
     removeMember,
     addTask,
     updateTask,
+    switchTask,
     removeTask,
     addComment,
     updateComment,
