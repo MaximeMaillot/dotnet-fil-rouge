@@ -1,5 +1,8 @@
 .Task {
-    margin-top: 1vh;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
 }
 
 .Task-name {

@@ -4,10 +4,10 @@
     border-radius: 1rem;
     padding: 1rem;
     border: solid #85586F 1px;
-    min-height: 70vh;
-    min-width: 20vw;
+    min-width: 25%;
     position: relative;
     background-color: #DFD3C3;
+    padding-bottom: 2rem;
 }
 
 .TaskList-title {

@@ -10,7 +10,7 @@ const CommentInput = ({ task_id }) => {
     return (
         <div>
             <input type='text' value={comment} onChange={(event) => { setComment(event.target.value) }}></input>
-            <button onClick={() => { dispatch(addComment({ member_id: members.currentMemberId, comment, task_id })) }}>Envoyez</button>
+            <button onClick={() => { if (comment != "") dispatch(addComment({ member_id: members.currentMemberId, comment, task_id })) }}>Envoyez</button>
         </div>
     );
 };
