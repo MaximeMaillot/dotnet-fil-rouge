@@ -17,7 +17,7 @@ export const memberSlice = createSlice({
             })
         },
         connectMember: (state, action) => {
-            const member = state.members.find((member) => member.username == action.payload.username && member.password == action.payload.password)
+            const member = state.members.find((member) => member.username === action.payload.username && member.password === action.payload.password)
             if (member) {
                 state.currentMemberId = member.member_id
             } else {

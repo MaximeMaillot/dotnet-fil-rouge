@@ -4,7 +4,7 @@ import "./NoProject.css";
 const NoProject = () => {
     return (
         <div className='NoProject'>
-            Créez un nouveau project !
+            <button>Créez un nouveau project !</button>
         </div>
     );
 };

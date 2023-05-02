@@ -2,7 +2,6 @@ import React from 'react';
 import "./DescriptionInput.css";
 
 const DescriptionInput = ({ description, setDescription }) => {
-    let desc = description;
     return (
         <div>
             <label>Déscription

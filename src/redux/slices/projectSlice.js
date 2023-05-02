@@ -49,7 +49,7 @@ export const projectSlice = createSlice({
         removeMember: (state, action) => {
             let index = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
             state.projects[index].members = state.projects[index].members.filter((member) => {
-                return member != action.payload
+                return member !== action.payload
             })
             return state
         },
@@ -71,7 +71,7 @@ export const projectSlice = createSlice({
         removeTask: (state, action) => {
             let indexProject = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
             state.projects[indexProject].tasks = state.projects[indexProject].tasks.filter((task) => {
-                return task.task_id != action.payload
+                return task.task_id !== action.payload
             })
             return state
         },
