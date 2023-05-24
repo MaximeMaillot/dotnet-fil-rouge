@@ -5,6 +5,24 @@ function getCurrentProjectArrayIndex(projects, id) {
     return projects.findIndex((project) => project.project_id === id)
 }
 
+function orderAllProjectsTasks(projects) {
+    for (let i = 0; i < projects.length; i++) {
+        projects[i].tasks.sort((a,b) => a.order - b.order);
+    }
+    return projects
+}
+
+function orderCurrentProjectsTasks(project) {
+    project.tasks.sort((a,b) => a.order - b.order);
+    return project
+}
+
+function fixTasksOrder(project) {
+    for (let i = 0; i < project.tasks.length; i++) {
+        project.tasks[i].order = i
+    }
+}
+
 export const projectSlice = createSlice({
     name: "project",
     initialState: {
@@ -70,7 +88,7 @@ export const projectSlice = createSlice({
         },
         switchTask: (state, action) => {
             const indexProject = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
-            if (action.payload.source.droppableId !== action.payload.destination.droppableId) {
+            if (action.payload.destination && action.payload.source.droppableId !== action.payload.destination.droppableId) {
                 const taskId = parseInt(action.payload.draggableId)
                 const indexTask = state.projects[indexProject].tasks.findIndex((task) => task.task_id === taskId)
                 state.projects[indexProject].tasks[indexTask].status = action.payload.destination.droppableId;
