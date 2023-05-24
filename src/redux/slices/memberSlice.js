@@ -5,7 +5,8 @@ export const memberSlice = createSlice({
     name: "member",
     initialState: {
         members: membersData.members,
-        currentMemberId: -1
+        currentMemberId: -1,
+        currentMember : {} // TODO
     },
     reducers: {
         addMember: (state, action) => {

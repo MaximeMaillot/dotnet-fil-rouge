@@ -1,5 +1,40 @@
 import { createSlice } from "@reduxjs/toolkit";
 import projectsData from './../../data/test-projects.json';
+import axios from "axios";
+
+const baseURL = "http://localhost:5264/api";
+
+async function GetCurrentProject(id) {
+    const client = axios.create({
+        baseURL: "http://localhost:5264/api" 
+      })
+    const jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIxIiwiZXhwIjoxNjg1NTIwNDI3LCJpc3MiOiJGcmVkQXZNYXgiLCJhdWQiOiJGcmVkQXZNYXgifQ.U93ARss-WueWc3GI_t-nb6JcPkXeh-m8eaO_z3Fm3qY';
+    const options = {
+        headers: {
+           Authorization: "Bearer " + jwtToken
+        }
+     }
+    client.get("/project/" + id, options).then((response) => {
+        return response.data.data
+      });
+}
+
+async function GetAllProjects() {
+    const client = axios.create({
+        baseURL: "http://localhost:5264/api" 
+      })
+    const jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIxIiwiZXhwIjoxNjg1NTIwNDI3LCJpc3MiOiJGcmVkQXZNYXgiLCJhdWQiOiJGcmVkQXZNYXgifQ.U93ARss-WueWc3GI_t-nb6JcPkXeh-m8eaO_z3Fm3qY';
+    const options = {
+        headers: {
+           Authorization: "Bearer " + jwtToken
+        }
+     }
+    client.get("/project", options).then((response) => {
+        console.log(response.data)
+        return response.data
+      });
+}
+
 
 function getCurrentProjectArrayIndex(projects, id) {
     return projects.findIndex((project) => project.project_id === id)
@@ -27,7 +62,9 @@ export const projectSlice = createSlice({
     name: "project",
     initialState: {
         projects: projectsData.projects,
-        currentProjectId: localStorage.getItem('CurrentProjectId') ? parseInt(localStorage.getItem('CurrentProjectId')) : -1
+        currentProjectId: localStorage.getItem('CurrentProjectId') ? parseInt(localStorage.getItem('CurrentProjectId')) : -1,
+        currentProject: localStorage.getItem('CurrentProjectId') ? GetCurrentProject(parseInt(localStorage.getItem('CurrentProjectId'))) : {},
+        test: GetAllProjects()
     },
     reducers: {
         addProject: (state, action) => {

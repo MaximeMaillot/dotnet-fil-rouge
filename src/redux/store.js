@@ -6,5 +6,8 @@ export default configureStore({
     reducer: {
         projects: projectSlice,
         members: memberSlice
-    }
+    },
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+        serializableCheck: false
+      })
 });
