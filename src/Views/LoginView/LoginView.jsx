@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import "./LoginView.css";
 import { useDispatch } from 'react-redux';
-import { connectMember } from '../../redux/slices/memberSlice';
+import { connectUser } from '../../redux/slices/userSlice';
 import store from "./../../redux/store"
 import { useNavigate } from 'react-router';
 
@@ -12,7 +12,7 @@ const LoginView = () => {
     const navigate = useNavigate();
     useEffect(() => {
         store.subscribe(() => {
-            if (store.getState().members.currentMemberId !== -1) {
+            if (store.getState().users.currentUserId !== -1) {
                 navigate('/')
             } else {
                 console.log("Connection failed")
@@ -29,7 +29,7 @@ const LoginView = () => {
                     <input id='loginName' type="text" value={username} onChange={(e) => { setUsername(e.target.value) }} />
                     <p className='para3'>Votre mot de passe</p>
                     <input id='motDePasse' type="text" value={password} onChange={(e) => { setPassword(e.target.value) }} />
-                    <button onClick={() => { dispatch(connectMember({ username, password })) }} className='commencer'>Me connecter</button>
+                    <button onClick={() => { dispatch(connectUser({ username, password })) }} className='commencer'>Me connecter</button>
                 </div>
             </div>
         </div>

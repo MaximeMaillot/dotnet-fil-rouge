@@ -27,7 +27,8 @@ export const projectSlice = createSlice({
     name: "project",
     initialState: {
         projects: projectsData.projects,
-        currentProjectId: localStorage.getItem('CurrentProjectId') ? parseInt(localStorage.getItem('CurrentProjectId')) : -1
+        currentProjectId: localStorage.getItem('CurrentProjectId') ? parseInt(localStorage.getItem('CurrentProjectId')) : -1,
+        currentProject: {},
     },
     reducers: {
         addProject: (state, action) => {
@@ -55,19 +56,19 @@ export const projectSlice = createSlice({
             state.currentProjectId = -1
             return state
         },
-        addMember: (state, action) => {
+        addUser: (state, action) => {
             let index = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
-            state.projects[index].members.push(action.payload)
+            state.projects[index].users.push(action.payload)
             return state
         },
-        updateMember: (state, action) => {
+        updateUser: (state, action) => {
             // TODO
             return state
         },
-        removeMember: (state, action) => {
+        removeUser: (state, action) => {
             let index = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
-            state.projects[index].members = state.projects[index].members.filter((member) => {
-                return member !== action.payload
+            state.projects[index].users = state.projects[index].users.filter((user) => {
+                return user !== action.payload
             })
             return state
         },
@@ -105,7 +106,7 @@ export const projectSlice = createSlice({
         addComment: (state, action) => {
             let indexProject = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
             let indexTask = state.projects[indexProject].tasks.findIndex((task) => task.task_id === action.payload.task_id)
-            let comment = { comment_id: 0, message: action.payload.comment, member_id: action.payload.member_id }
+            let comment = { comment_id: 0, message: action.payload.comment, user_id: action.payload.user_id }
             state.projects[indexProject].tasks[indexTask].comments.push(comment)
         },
         updateComment: () => {
@@ -123,9 +124,9 @@ export const {
     removeProject,
     setCurrentProject,
     unsetCurrentProject,
-    addMember,
-    updateMember,
-    removeMember,
+    addUser,
+    updateUser,
+    removeUser,
     addTask,
     updateTask,
     switchTask,
