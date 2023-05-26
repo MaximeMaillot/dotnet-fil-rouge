@@ -20,6 +20,7 @@ const AccueilView = () => {
                 </div>
             </div>
 
+            <div className='initiation-global'>
             <div className='initiation'>
                     <img src="/gros-logo-pour-prez.png" alt="Petit logo Trallo" className='groslogo2' />
                     <div className='texte2'>
@@ -29,7 +30,8 @@ const AccueilView = () => {
                     </div>
             </div>
             <div  className='initiation-illus'>
-                <img src="/illus.png" alt="illustration trello" className='illus' />
+                <img src="/illus.png" alt="illustration trello" />
+            </div>
             </div>
         </div>
 

@@ -3,21 +3,22 @@
     /*grid-template-columns: 1fr 1fr 8fr 1fr 1fr;*/
     grid-template-columns: repeat(10, 1fr);
     /*grid-template-rows: 1fr;*/
-    grid-template-rows: 1fr;
+    grid-template-rows: 5vh;
     grid-gap: 5px;
     width: 100vw;
-    /*height: 5vh;
-    font-family: 'Atkinson Hyperlegible', sans-serif;*/
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    /*height: 5vh;*/
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     background-color: white;
 }
+
 a {
     text-decoration: none;
     color: inherit;
     font-size: 14px;
     font-family: 'Atkinson Hyperlegible', sans-serif;
     /* line-height: center; centrer verticalement le texte */
-  }
+}
 
 .logo{
     /*grid-column-start: 2;
@@ -25,13 +26,13 @@ a {
     grid-column-end: 3;
     grid-row-end: 1;*/
     grid-column: 1 / span 1;
-    grid-row: 100%;
+    /* grid-row: 100%; */
     width: 100%;
     height: auto;
     display: flex; /* s'assurer que le contenu est centré horizontalement */
     justify-content: center; /* centrer horizontalement le contenu */
     align-items: center; /* centrer verticalement le contenu */
-    align-self: center; /* centrer le bouton verticalement dans la case de la grille */
+    /*align-self: center;  centrer le bouton verticalement dans la case de la grille */
 }
 
 .bouton1{
@@ -68,9 +69,9 @@ a {
     align-self: center; /* centrer le bouton verticalement dans la case de la grille */
 }
 .bouton3{
-    grid-column-start: 10;
+    grid-column-start: 9;
     grid-row-start: 1;
-    grid-column-end: 11;
+    grid-column-end: 10;
     grid-row-end: 1;
     height: 1.5em;
     background-color: #85586F;
@@ -100,5 +101,5 @@ a {
     justify-content: center; /* centrer horizontalement le contenu */
     align-items: center; /* centrer verticalement le contenu */
     align-self: center; /* centrer le bouton verticalement dans la case de la grille */
-    justify-self : end;
+    justify-self : center;
 }

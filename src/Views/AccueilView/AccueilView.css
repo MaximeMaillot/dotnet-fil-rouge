@@ -48,18 +48,42 @@
     margin: 10px;
     font-size: 14px;
 }
+.initiation-global{
+    display: flex; 
+    justify-content: space-evenly;
+    width: 100%;
 
+}
 .initiation{
     display: flex; 
     justify-content: top;
     align-items: flex-start; 
-    align-self: center; 
+    /* align-self: center;  */
     width: 40%;
     height: auto;
     border: #85586F 1px solid;
-    margin-top: 20px ;
-    margin-left: 100px;
+    margin-top: 40px ;
+    margin-left: 40px;
 }
+.initiation-illus{
+    display: flex; 
+    justify-content: top;
+    align-items: flex-start; 
+    /* align-self: center;  */
+    width: 40%;
+    max-width: 100%;
+    height: auto;
+    /* border: #85586F 1px solid; */
+    margin-top: 40px ;
+    margin-right: 40px;
+}
+  
+  .initiation-illus img {
+
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
 .groslogo2{
     display: flex; 
     justify-content: center;
@@ -78,28 +102,7 @@
     margin: 10px;
     font-size: 12px;
 }
-.initiation-illus{
-    display: flex; 
-    justify-content: top;
-    align-items: flex-start; 
-    align-self: center; 
-    width: 40%;
-    height: auto;
-    border: #85586F 1px solid;
-    margin-top: 20px ;
-    margin-left: 100px;
 
-}
-
-.illus{
-    display: flex; 
-    justify-content: center;
-    align-items: flex-start; 
-    align-self: top; 
-    justify-self : start;
-    margin: 10px;
-    height: 250px;
-}
 
 /* .prez{
     display: grid;
