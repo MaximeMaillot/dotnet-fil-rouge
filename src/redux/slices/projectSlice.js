@@ -28,8 +28,7 @@ export const projectSlice = createSlice({
     initialState: {
         projects: projectsData.projects,
         currentProjectId: localStorage.getItem('CurrentProjectId') ? parseInt(localStorage.getItem('CurrentProjectId')) : -1,
-        currentProject: localStorage.getItem('CurrentProjectId') ? GetCurrentProject(parseInt(localStorage.getItem('CurrentProjectId'))) : {},
-        test: GetAllProjects()
+        currentProject: {},
     },
     reducers: {
         addProject: (state, action) => {
