@@ -10,7 +10,7 @@ import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
 
 const Router = () => {
-    const projects = useSelector(state => state.projects)
+    const projects = useSelector(state => state.projects.projects)
     return (
         <>
             <BrowserRouter>

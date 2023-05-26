@@ -4,13 +4,16 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addComment } from '../../redux/slices/projectSlice';
 
 const CommentInput = ({ task_id }) => {
-    const users = useSelector(state => state.users)
-    const [comment, setComment] = useState("")
+    const currentUser = useSelector(state => state.projects.currentUser)
+    const [comment, setComment] = useState({
+        message: "",
+        user: currentUser
+    })
     const dispatch = useDispatch()
     return (
         <div>
             <input type='text' value={comment} onChange={(event) => { setComment(event.target.value) }}></input>
-            <button onClick={() => { if (comment != "") dispatch(addComment({ user_id: users.currentUserId, comment, task_id })) }}>Envoyez</button>
+            <button onClick={() => { if (comment.message !== "") dispatch(addComment({ task_id, comment })) }}>Envoyez</button>
         </div>
     );
 };

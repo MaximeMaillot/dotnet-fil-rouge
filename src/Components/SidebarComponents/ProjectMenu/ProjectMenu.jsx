@@ -1,14 +1,15 @@
 import React from 'react';
 import './ProjectMenu.css';
 import ProjectLabel from "./../ProjectLabel/ProjectLabel"
-import { useSelector } from 'react-redux';
+import { useSelector} from 'react-redux';
+
 
 const ProjectMenu = ({ project, setCurrentProject }) => {
-    const projects = useSelector(state => state.projects)
+    const currentProject = useSelector(state => state.projects.currentProject)
     return (
         <div className='ProjectMenu'>
-            <ProjectLabel key={project.project_id} project={project} setCurrentProject={setCurrentProject} />
-            {project.project_id === projects.currentProjectId ? <div className='ProjectMenu-users'>Membres</div> : undefined}
+            <ProjectLabel key={project.id} project={project} setCurrentProject={setCurrentProject} />
+            {currentProject ? project.project_id === currentProject.id ? <div className='ProjectMenu-users'>Membres</div> : undefined : undefined}
         </div>
     );
 };

@@ -399,3 +399,6 @@ FodyWeavers.xsd
 
 # ignore .vscode config
 .vscode
+
+# Ignore environnement variable
+.env

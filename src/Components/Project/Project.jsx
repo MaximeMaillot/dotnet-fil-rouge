@@ -10,8 +10,7 @@ function handleEnd(e, dispatch) {
 }
 
 
-const Project = ({ projects }) => {
-    const project = projects.projects.find((project) => project.project_id === projects.currentProjectId)
+const Project = ({ project }) => {
     const dispatch = useDispatch();
     return (
         <div className='Project'>

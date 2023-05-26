@@ -8,7 +8,7 @@ const ProjectLabel = ({ project }) => {
     const dispatch = useDispatch();
     return (
         <div className='ProjectLabel' onClick={() => {
-            dispatch(setCurrentProject(project.project_id))
+            dispatch(setCurrentProject(project))
         }}>
             {project.name}
         </div>

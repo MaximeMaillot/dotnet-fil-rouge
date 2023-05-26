@@ -8,7 +8,7 @@ const ProjectsView = ({ projects }) => {
     return (
         <div className='ProjectsView'>
             <Sidebar projects={projects} />
-            {projects.currentProjectId !== -1 ? <Project projects={projects} /> : <NoProject />}
+            {projects.currentProject ? <Project project={projects.currentProject} /> : <NoProject />}
         </div>
     );
 };

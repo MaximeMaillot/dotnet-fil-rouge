@@ -1,39 +1,54 @@
 import axios from 'axios' // some http client lib
 
 function getJWTToken() {
-    return 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIxIiwiZXhwIjoxNjg1NTIwNDI3LCJpc3MiOiJGcmVkQXZNYXgiLCJhdWQiOiJGcmVkQXZNYXgifQ.U93ARss-WueWc3GI_t-nb6JcPkXeh-m8eaO_z3Fm3qY';
+    return localStorage.getItem('jwt-token');
 }
 
 function createAxiosClient() {
     return axios.create({
         baseURL: process.env.REACT_APP_SERVICE_URI
-      })
+    })
+}
+
+function getAuthenticationHeader() {
+    return {
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }
 }
 
 function getClientOptions() {
     return {
         headers: {
-           Authorization: "Bearer " + getJWTToken()
+            'Content-Type': 'application/json',
+            'Authorization': "Bearer " + getJWTToken()
         }
-     }
+    }
 }
 
 // AUTHENTICATION //
 
 // User need to contain an email and a password
 export async function login(user) {
-    createAxiosClient().post("/authentication/login", user, getClientOptions()).then((response) => {
-        // SET JWT TOKEN
+    return await createAxiosClient().post("/authentication/login", user, getAuthenticationHeader()).then((response) => {
+        if (response.status === 400) {
+            console.log("connection failed")
+            return undefined;
+        }
         return response.data
-      });
+    }).catch(err => console.log(err));
 }
 
 // User need to contain : username, email and password
-export async function login(user) {
-    createAxiosClient().post("/authentication/register", user, getClientOptions()).then((response) => {
-        // SET JWT TOKEN
+export async function register(user) {
+    return await createAxiosClient().post("/authentication/register", user, getAuthenticationHeader()).then((response) => {
+        if (response.status === 400) {
+            console.log("register failed")
+            return undefined;
+        }
         return response.data
-      });
+    }).catch(err => console.log(err));
 }
 
 
@@ -41,106 +56,110 @@ export async function login(user) {
 // PROJECTS //
 
 export async function getProject(projectId) {
-    createAxiosClient().get("/project/" + projectId, getClientOptions()).then((response) => {
+    return await createAxiosClient().get("/project/" + projectId, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 }
 
-export async function getProjectsByUserId(userId) {
-    createAxiosClient.get("/project/user/" + userId, getClientOptions()).then((response) => {
+export async function getProjectsByUserId() {
+    console.log("ici")
+    return await createAxiosClient().get("/project", getClientOptions()).then((response) => {
+        console.log(response)
         return response.data
-      });
+    }).catch(e => {
+        console.log(e)
+    });
 }
 
 export async function postProject(project) {
-    createAxiosClient.post("/project", project, getClientOptions()).then((response) => {
+    return await createAxiosClient().post("/project", project, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 };
 
 export async function putProject(projectId, project) {
-    createAxiosClient.put("/project/" + projectId, project, getClientOptions()).then((response) => {
+    return await createAxiosClient().put("/project/" + projectId, project, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 };
 
 export async function deleteProject(projectId) {
-    createAxiosClient.delete("/project/" + projectId, getClientOptions()).then((response) => {
+    return await createAxiosClient().delete("/project/" + projectId, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 };
+
+export async function postUserToProject(userId, projectId) {
+    return await createAxiosClient().post("/user/" + userId + "/project/" + projectId, getClientOptions()).then((response) => {
+        return response.data
+    });
+}
 
 
 // USERS //
 
 export async function getUsersByProjectId(projectId) {
-    createAxiosClient.get("/user/project/" + projectId, getClientOptions()).then((response) => {
+    return await createAxiosClient().get("/user/project/" + projectId, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 }
 
 export async function getUser(userId) {
-    createAxiosClient.get("/user/" + userId, getClientOptions()).then((response) => {
+    return await createAxiosClient().get("/user/" + userId, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 }
 
-export async function postUser(user) {
-    createAxiosClient.post("/user", user, getClientOptions()).then((response) => {
-        return response.data
-      });
-};
-
 export async function deleteUser(userId) {
-    createAxiosClient.delete("/user/" + userId, getClientOptions()).then((response) => {
+    return await createAxiosClient().delete("/user/" + userId, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 };
 
 // TASKS //
 
 export async function getTasksByProjectId(projectId) {
-    createAxiosClient.get("/task/project/" + projectId, getClientOptions()).then((response) => {
+    return await createAxiosClient().get("/task/project/" + projectId, getClientOptions()).then((response) => {
         return response.data
-      });
-} 
+    });
+}
 
-export async function postTask(taskId) {
-    createAxiosClient.post("/task", taskId, getClientOptions()).then((response) => {
+export async function postTask(task) {
+    return await createAxiosClient().post("/task", task, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 };
 
 export async function putTask(taskId, task) {
-    createAxiosClient.put("/task/" + taskId, task, getClientOptions()).then((response) => {
+    return await createAxiosClient().put("/task/" + taskId, task, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 };
 
 export async function deleteTask(taskId) {
-    createAxiosClient.delete("/task/" + taskId, getClientOptions()).then((response) => {
+    return await createAxiosClient().delete("/task/" + taskId, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 };
 
 
 // COMMENTS //
 
 export async function getCommentsByTaskId(taskId) {
-    createAxiosClient.get("/comment/task/" + taskId, getClientOptions()).then((response) => {
+    return await createAxiosClient().get("/comment/task/" + taskId, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 }
 
 export async function postComment(commentId) {
-    createAxiosClient.post("/comment", commentId, getClientOptions()).then((response) => {
+    return await createAxiosClient().post("/comment", commentId, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 };
 
 export async function deleteComment(commentId) {
-    createAxiosClient.delete("/comment/" + commentId, getClientOptions()).then((response) => {
+    return await createAxiosClient().delete("/comment/" + commentId, getClientOptions()).then((response) => {
         return response.data
-      });
+    });
 };
 

@@ -1,18 +1,37 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import "./SignupView.css";
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
+import { registerUser } from '../../redux/slices/projectSlice';
+import store from "../../redux/store.js"
 
 const SignupView = () => {
+    const dispatch = useDispatch();
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [name, setName] = useState("");
+    const navigate = useNavigate();
+    useEffect(() => {
+        store.subscribe(() => {
+            if (store.getState().projects.currentUser) {
+                navigate('/')
+            }
+        })
+    })
+
     return (
         <div>
-            <div className="wraperCreatecompte">
+            <div className="wraperCreateAccount">
                 <div className="createAccount">
-                    <p className='para1'>Connectez-vous à votre compte</p>
+                    <p className='para1'>Inscription</p>
                     <h1>Trello</h1>
-                    <p className='para2'>Votre login</p>
-                    <input type="text" />
+                    <p>Votre nom</p>
+                    <input type='text' id='name' value={name} onChange={(e) => { setName(e.target.value) }}/>
+                    <p className='para2'>Votre email</p>
+                    <input type="text" id='email' value={email} onChange={(e) => { setEmail(e.target.value) }}/>
                     <p className='para3'>Votre mot de passe</p>
-                    <input type="text" />
-                    <button className='commencer'>Me connecter</button>
+                    <input type="text" id='password' value={password} onChange={(e) => { setPassword(e.target.value) }}/>
+                    <button className='commencer' onClick={() => { dispatch(registerUser({ email, password, name })) }}>S'inscrire</button>
                 </div>
             </div>
         </div>

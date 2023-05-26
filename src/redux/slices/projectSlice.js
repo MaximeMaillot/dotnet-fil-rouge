@@ -1,34 +1,82 @@
-import { createSlice } from "@reduxjs/toolkit";
-import projectsData from './../../data/test-projects.json';
+import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { login, register, getProjectsByUserId } from "../../api/api-client";
 
 function getCurrentProjectArrayIndex(projects, id) {
     return projects.findIndex((project) => project.project_id === id)
 }
 
-function orderAllProjectsTasks(projects) {
-    for (let i = 0; i < projects.length; i++) {
-        projects[i].tasks.sort((a,b) => a.order - b.order);
-    }
-    return projects
-}
+export const getProjects = createAsyncThunk('projects/getProjects', async () => {
+    console.log("coucou")
+    return await getProjectsByUserId()
+})
 
-function orderCurrentProjectsTasks(project) {
-    project.tasks.sort((a,b) => a.order - b.order);
-    return project
-}
 
-function fixTasksOrder(project) {
-    for (let i = 0; i < project.tasks.length; i++) {
-        project.tasks[i].order = i
-    }
-}
+export const loginUser = createAsyncThunk('users/loginUser', async (user) => {
+    return await login(user)
+})
+
+export const registerUser = createAsyncThunk('users/registerUser', async (user) => {
+    return await register(user)
+})
 
 export const projectSlice = createSlice({
     name: "project",
     initialState: {
-        projects: projectsData.projects,
-        currentProjectId: localStorage.getItem('CurrentProjectId') ? parseInt(localStorage.getItem('CurrentProjectId')) : -1,
-        currentProject: {},
+        projects: [],
+        currentProject: undefined,
+        currentUser: undefined,
+        loading: 'idle',
+        error: null
+    },
+    extraReducers: (builder) => { // Async reducer for API
+        // LOGIN
+        builder.addCase(loginUser.pending, (state, action) => {
+            state.loading = 'pending'
+        })
+        builder.addCase(loginUser.fulfilled, (state, action) => {
+            if (action.payload) {
+                state.currentUser = action.payload.user
+                localStorage.setItem("jwt-token", action.payload.token)
+            }
+            state.loading = 'idle'
+        })
+        builder.addCase(loginUser.rejected, (state, action) => {
+            state.loading = 'idle'
+            state.error = 'Error occured'
+        })
+        // REGISTER
+        builder.addCase(registerUser.pending, (state, action) => {
+            state.loading = 'pending'
+        })
+        builder.addCase(registerUser.fulfilled, (state, action) => {
+            if (action.payload) {
+                state.currentUser = action.payload.user
+                localStorage.setItem("jwt-token", action.payload.token)
+            }
+            state.loading = 'idle'
+        })
+        builder.addCase(registerUser.rejected, (state, action) => {
+            state.loading = 'idle'
+            state.error = 'Error occured'
+        })
+        // PROJECT
+        builder.addCase(getProjects.pending, (state, action) => {
+            console.log("pending")
+            state.loading = 'pending'
+        })
+        builder.addCase(getProjects.fulfilled, (state, action) => {
+            console.log("fullfilled", action.payload)
+            if (action.payload) {
+                state.projects = action.payload
+            }
+            state.loading = 'idle'
+        })
+        builder.addCase(getProjects.rejected, (state, action) => {
+            console.log("error")
+            console.log(action)
+            state.loading = 'idle'
+            state.error = 'Error occured'
+        })
     },
     reducers: {
         addProject: (state, action) => {
@@ -47,13 +95,12 @@ export const projectSlice = createSlice({
             return state
         },
         setCurrentProject: (state, action) => {
-            localStorage.setItem('CurrentProjectId', action.payload)
-            state.currentProjectId = action.payload
+            console.log(action.payload)
+            state.currentProject = action.payload
             return state
         },
         unsetCurrentProject: (state) => {
-            localStorage.removeItem('CurrentProjectId')
-            state.currentProjectId = -1
+            state.currentProject = undefined
             return state
         },
         addUser: (state, action) => {
@@ -114,6 +161,11 @@ export const projectSlice = createSlice({
         },
         removeComment: () => {
 
+        },
+        disconnectUser: (state) => {
+            state.currentUser = undefined
+            localStorage.removeItem("jwt-token")
+            return state
         }
     }
 })
@@ -133,7 +185,8 @@ export const {
     removeTask,
     addComment,
     updateComment,
-    removeComment
+    removeComment,
+    disconnectUser
 } = projectSlice.actions;
 
 export default projectSlice.reducer;
