@@ -18,11 +18,31 @@ function getClientOptions() {
      }
 }
 
+// AUTHENTICATION //
+
+// User need to contain an email and a password
+export async function login(user) {
+    createAxiosClient().post("/authentication/login", user, getClientOptions()).then((response) => {
+        // SET JWT TOKEN
+        return response.data
+      });
+}
+
+// User need to contain : username, email and password
+export async function login(user) {
+    createAxiosClient().post("/authentication/register", user, getClientOptions()).then((response) => {
+        // SET JWT TOKEN
+        return response.data
+      });
+}
+
+
+
 // PROJECTS //
 
 export async function getProject(projectId) {
     createAxiosClient().get("/project/" + projectId, getClientOptions()).then((response) => {
-        return response.data.data
+        return response.data
       });
 }
 
