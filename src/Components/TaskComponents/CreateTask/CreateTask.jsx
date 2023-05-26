@@ -1,17 +1,17 @@
 import React, { useState } from 'react';
 import "./CreateTask.css";
 import DescriptionInput from '../../DescriptionInput/DescriptionInput';
-import MemberTaskList from '../MemberTaskList/MemberTaskList';
+import UserTaskList from '../UserTaskList/UserTaskList';
 import { useDispatch } from 'react-redux';
 import { addTask } from '../../../redux/slices/projectSlice';
 
-const CreateTask = ({ members = [], setTaskBoxDisplay, status }) => {
+const CreateTask = ({ users = [], setTaskBoxDisplay, status }) => {
     const dispatch = useDispatch();
     const [description, setDescription] = useState("")
     const [name, setName] = useState("")
     return (
         <div>
-            <MemberTaskList members={members} />
+            <UserTaskList users={users} />
             <div>
                 <label> Nom de la tâche
                     <input type='text' value={name} onChange={(event) => { setName(event.target.value) }}></input>

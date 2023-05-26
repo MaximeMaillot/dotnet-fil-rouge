@@ -1,40 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import projectsData from './../../data/test-projects.json';
-import axios from "axios";
-
-const baseURL = "http://localhost:5264/api";
-
-async function GetCurrentProject(id) {
-    const client = axios.create({
-        baseURL: "http://localhost:5264/api" 
-      })
-    const jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIxIiwiZXhwIjoxNjg1NTIwNDI3LCJpc3MiOiJGcmVkQXZNYXgiLCJhdWQiOiJGcmVkQXZNYXgifQ.U93ARss-WueWc3GI_t-nb6JcPkXeh-m8eaO_z3Fm3qY';
-    const options = {
-        headers: {
-           Authorization: "Bearer " + jwtToken
-        }
-     }
-    client.get("/project/" + id, options).then((response) => {
-        return response.data.data
-      });
-}
-
-async function GetAllProjects() {
-    const client = axios.create({
-        baseURL: "http://localhost:5264/api" 
-      })
-    const jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VySWQiOiIxIiwiZXhwIjoxNjg1NTIwNDI3LCJpc3MiOiJGcmVkQXZNYXgiLCJhdWQiOiJGcmVkQXZNYXgifQ.U93ARss-WueWc3GI_t-nb6JcPkXeh-m8eaO_z3Fm3qY';
-    const options = {
-        headers: {
-           Authorization: "Bearer " + jwtToken
-        }
-     }
-    client.get("/project", options).then((response) => {
-        console.log(response.data)
-        return response.data
-      });
-}
-
 
 function getCurrentProjectArrayIndex(projects, id) {
     return projects.findIndex((project) => project.project_id === id)
@@ -92,19 +57,19 @@ export const projectSlice = createSlice({
             state.currentProjectId = -1
             return state
         },
-        addMember: (state, action) => {
+        addUser: (state, action) => {
             let index = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
-            state.projects[index].members.push(action.payload)
+            state.projects[index].users.push(action.payload)
             return state
         },
-        updateMember: (state, action) => {
+        updateUser: (state, action) => {
             // TODO
             return state
         },
-        removeMember: (state, action) => {
+        removeUser: (state, action) => {
             let index = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
-            state.projects[index].members = state.projects[index].members.filter((member) => {
-                return member !== action.payload
+            state.projects[index].users = state.projects[index].users.filter((user) => {
+                return user !== action.payload
             })
             return state
         },
@@ -142,7 +107,7 @@ export const projectSlice = createSlice({
         addComment: (state, action) => {
             let indexProject = getCurrentProjectArrayIndex(state.projects, state.currentProjectId)
             let indexTask = state.projects[indexProject].tasks.findIndex((task) => task.task_id === action.payload.task_id)
-            let comment = { comment_id: 0, message: action.payload.comment, member_id: action.payload.member_id }
+            let comment = { comment_id: 0, message: action.payload.comment, user_id: action.payload.user_id }
             state.projects[indexProject].tasks[indexTask].comments.push(comment)
         },
         updateComment: () => {
@@ -160,9 +125,9 @@ export const {
     removeProject,
     setCurrentProject,
     unsetCurrentProject,
-    addMember,
-    updateMember,
-    removeMember,
+    addUser,
+    updateUser,
+    removeUser,
     addTask,
     updateTask,
     switchTask,

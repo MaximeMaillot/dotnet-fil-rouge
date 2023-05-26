@@ -1,10 +1,10 @@
-.MemberLabel-background {
+.UserLabel-background {
     background-color: #85586F;
     border: 1px solid purple;
     border-radius: 50%;
     max-width: 5%;
 }
 
-.MemberLabel-background > img {
+.UserLabel-background > img {
     max-width: 100%;
 }

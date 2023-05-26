@@ -4,17 +4,17 @@ import CommentInput from '../../CommentInput/CommentInput';
 import Comment from '../../Comment/Comment';
 import DescriptionInput from '../../DescriptionInput/DescriptionInput';
 import { useState } from 'react';
-import MemberTaskList from '../MemberTaskList/MemberTaskList';
+import UserTaskList from '../UserTaskList/UserTaskList';
 import { useDispatch } from 'react-redux';
 import { updateTask } from '../../../redux/slices/projectSlice';
 
-const UpdateTask = ({ members, task, setTaskBoxDisplay, status }) => {
+const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
     const [description, setDescription] = useState(task.description)
     const [dropDownStatus, setDropDownStatus] = useState(status)
     const dispatch = useDispatch();
     return (
         <div className='UpdateTask'>
-            <MemberTaskList members={members} />
+            <UserTaskList users={users} />
             <h3>{task.name}</h3>
             <DescriptionInput description={description} setDescription={setDescription} />
             <div>Commentaires</div>

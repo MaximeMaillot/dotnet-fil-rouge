@@ -1,12 +1,12 @@
 import React from 'react';
-import './MembersView.css'
+import './UsersView.css'
 
-const MembersView = () => {
+const UsersView = () => {
     return (
         <div>
-            Members view
+            Users view
         </div>
     );
 };
 
-export default MembersView;
+export default UsersView;

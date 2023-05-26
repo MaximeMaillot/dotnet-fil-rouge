@@ -2,10 +2,10 @@ import React from 'react';
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { disconnectMember } from '../../redux/slices/memberSlice';
+import { disconnectUser } from '../../redux/slices/userSlice';
 
 const Navbar = () => {
-    const members = useSelector(state => state.members)
+    const users = useSelector(state => state.users)
     const dispatch = useDispatch()
 
     return (
@@ -14,7 +14,7 @@ const Navbar = () => {
             <div className='bouton1'>
                 <Link to="/projects">Espaces de travail </Link>
             </div>
-            {members.currentMemberId === -1 ?
+            {users.currentUserId === -1 ?
                 <>
                     <div className='bouton2'>
                         <Link to="/login">Se connecter</Link>
@@ -23,7 +23,7 @@ const Navbar = () => {
                         <Link to="/signup">Inscription</Link>
                     </div>
                 </>
-                : <button className='button2' onClick={() => { dispatch(disconnectMember()) }}>Se déconnecter</button>
+                : <button className='button2' onClick={() => { dispatch(disconnectUser()) }}>Se déconnecter</button>
             }
         </div>
     );
