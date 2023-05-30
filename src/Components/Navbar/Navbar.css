@@ -15,7 +15,6 @@
 a {
     text-decoration: none;
     color: inherit;
-    font-size: 14px;
     font-family: 'Atkinson Hyperlegible', sans-serif;
     /* line-height: center; centrer verticalement le texte */
 }
@@ -35,10 +34,10 @@ a {
     /*align-self: center;  centrer le bouton verticalement dans la case de la grille */
 }
 
-.bouton1{
-    grid-column-start: 2;
+.bouton0{
+    grid-column-start: 1;
     grid-row-start: 1;
-    grid-column-end: 4;
+    grid-column-end: 3;
     grid-row-end: 1;
     height: 100%;
     background-color: white;
@@ -48,7 +47,24 @@ a {
     justify-content: center; /* centrer horizontalement le contenu */
     align-items: center; /* centrer verticalement le contenu */
     align-self: center; /* centrer le bouton verticalement dans la case de la grille */
-    color: black;
+}
+
+.bouton1{
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-column-end: 5;
+    grid-row-end: 1;
+    height: 100%;
+    background-color: white;
+    width: auto;
+    margin: 0px 5px 0px 5px;
+    color: #85586F;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: center; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
+    align-self: center; /* centrer le bouton verticalement dans la case de la grille */
     /*border:solid #85586F 1px;*/
 }
 

@@ -29,7 +29,9 @@ const Navbar = () => {
         <div >
             <BrowserRouter>
                 <div className='Navbar'>
-                    <Link to="/"><img src="/logo-trallo-perso.png" alt="Logo Trallo" className='logo' /></Link>
+                    <div className='bouton0'>
+                    <Link to="/"><img src="/logo-trallo-perso.png" alt="Logo Trallo" className='logo'/></Link>
+                    </div>
                     <div className='bouton1'>
                         <Link to="/projects">Espaces de travail </Link>
                     </div>
