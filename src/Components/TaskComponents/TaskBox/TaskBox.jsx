@@ -16,9 +16,12 @@ function populateTaskBoxWithType(task, type, setTaskBoxDisplay, status) {
 
 const TaskBox = ({ task, type, setTaskBoxDisplay, status }) => {
     return (
-        <div className='TaskBox'>
-            {populateTaskBoxWithType(task, type, setTaskBoxDisplay, status)}
+        <div className='FondTranslucide'>
+            <div className='TaskBox'>
+                {populateTaskBoxWithType(task, type, setTaskBoxDisplay, status)}
+            </div>
         </div>
+
     );
 };
 

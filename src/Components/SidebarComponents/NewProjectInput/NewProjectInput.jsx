@@ -4,7 +4,7 @@ import './NewProjectInput.css';
 const NewProjectInput = ({ setCreateProject }) => {
     return (
         <>
-            <input type='text' onKeyUp={(event) => {
+            <input className ='inputNewProject' type='text' onKeyUp={(event) => {
                 if (event.key === "Enter") {
                     setCreateProject(false)
                 }

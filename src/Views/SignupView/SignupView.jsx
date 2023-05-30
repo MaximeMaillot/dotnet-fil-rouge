@@ -3,19 +3,23 @@ import "./SignupView.css";
 
 const SignupView = () => {
     return (
-        <div>
             <div className="wraperCreatecompte">
                 <div className="createAccount">
-                    <p className='para1'>Connectez-vous à votre compte</p>
-                    <h1>Trello</h1>
-                    <p className='para2'>Votre login</p>
+                    <p className='para1'>Inscrivez-vous sur</p>
+                    <h1>Trallo</h1>
+                    <p className='para2'>Rentrez votre Email :</p>
                     <input type="text" />
-                    <p className='para3'>Votre mot de passe</p>
+                    <p className='para2'>Choisissez votre login :</p>
                     <input type="text" />
-                    <button className='commencer'>Me connecter</button>
+                    <p className='para2'>Choisissez votre mot de passe :</p>
+                    <input type="text" />
+                <div className='commencer'>
+                Créer mon compte
+                    {/* <button >Me connecter</button> */}
                 </div>
+                </div>
+
             </div>
-        </div>
     );
 };
 

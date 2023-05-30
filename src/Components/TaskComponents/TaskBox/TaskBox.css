@@ -1,13 +1,27 @@
 .TaskBox {
-    z-index: 1;
+    z-index: 2;
     position: fixed;
-    top: 10%;
-    left: 25%;
-    width: 50%;
-    height: 80%;
-    /*optional bg color*/
-    background-color: #D0B8A8;
+    border-radius: 8px;
+    /* top: 15%;
+    left: 2rem; */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 75%;
+    background-color: #85586F;
+    color: white;
     /*the following isn't necessary but will help center everything once we add buttons*/
     display: flex;
     flex-direction: column;
+    padding: 2rem;
+  }
+  .FondTranslucide{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(223,211,195, 0.9); /* ajustez l'opacité (0.5 dans cet exemple) selon vos besoins */
+  z-index: 1; /* assurez-vous que le fond translucide a une valeur de z-index supérieure aux autres éléments */
   }

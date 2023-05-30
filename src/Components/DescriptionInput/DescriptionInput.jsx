@@ -4,12 +4,13 @@ import "./DescriptionInput.css";
 const DescriptionInput = ({ description, setDescription }) => {
     return (
         <div>
-            <label>Déscription
-                <input className='DescriptionInput'
-                    value={description}
-                    onChange={(event) => { setDescription(event.target.value) }}
-                ></input>
-            </label>
+            <div className='DescriptionWrap'>
+                <label className='Description'>Description : </label>
+                <textarea className='Description2'
+                        value={description}
+                        onChange={(event) => { setDescription(event.target.value) }}>
+                </textarea>
+            </div>
         </div>
     );
 };

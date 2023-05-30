@@ -1,5 +1,6 @@
 .Project {
     width: 100%;
+    /* background-color: white; */
 }
 
 .Project-tasklist {
@@ -9,6 +10,6 @@
 }
 
 .Project-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
     text-align: center;
 }

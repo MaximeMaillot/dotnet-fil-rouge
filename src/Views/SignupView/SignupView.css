@@ -5,35 +5,28 @@ body{
 .wraperCreatecompte {
     box-sizing: border-box;
     position: relative;
-    margin: 50px auto;
+    margin:  0px auto;
     width: 1200px;
     height: 650px;
     background: #F8EDE3;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 2px;
-    font-family: 'arial';
-    font-style: normal;
+    font-family: 'Atkinson Hyperlegible', sans-serif;
     font-weight: 400;
     font-size: 15px;
-    line-height: 19px;
+    line-height: 17px;
 }
 
 .createAccount {
+    text-align: center;
     position: absolute;
     width: 500px;
-    height: 350px;
-    left: 350px;
-    top: 141px;
+    height: auto;
+    /* left: 350px;
+    top: 141px; */
     background: #FFFFFF;
     box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-}
-
-.firstP {
-    margin: 0 auto;
-    width: 150px;
-    height: 19px;  
-    color: #000000;
 }
 
 .para1 {
@@ -41,24 +34,21 @@ body{
     color: #000000;
 }
 .para2{
-    text-align: left;
-    padding-left: 60px;
-}
-.para3{
-    text-align: left;
-    padding-left: 60px;
+    text-align: center;
+    padding-left: 0px;
+    margin: 10px auto;
 }
 
 .createAccount input {
     box-sizing: border-box;
-    width: 376px;
-    height: 37px;
+    width: 375px;
+    height: 35px;
     background: #FFFFFF;
     border: 1px solid #696969;
 }
 
-.createAccount button {
-    margin-top: 20px;
+/* .createAccount button {
+    margin-top: 40px;
     width: 208px;
     height: 48px;
     background-color: #85586F;
@@ -66,4 +56,19 @@ body{
     color: #FFFFFF;
     font-size: 20px;
     font-weight: bold;
+} */
+.commencer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 36px;
+    background-color: #85586F;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 18px;
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: center; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
 }

@@ -8,7 +8,7 @@ const UserTaskList = ({users = []}) => {
             <div className='UserTaskList-users'>{users.map((user) => {
                 return <UserLabel key={user} user={user}/>
             })}</div>
-            <button className='UserTaskList-button'>Modifier membres</button>
+            <div className='UserTaskList-button'>Modifier membres</div>
         </>
     );
 };

@@ -8,9 +8,9 @@ const CommentInput = ({ task_id }) => {
     const [comment, setComment] = useState("")
     const dispatch = useDispatch()
     return (
-        <div>
-            <input type='text' value={comment} onChange={(event) => { setComment(event.target.value) }}></input>
-            <button onClick={() => { if (comment != "") dispatch(addComment({ user_id: users.currentUserId, comment, task_id })) }}>Envoyez</button>
+        <div className='Comment'>
+            <textarea className='zone-txt' value={comment} onChange={(event) => { setComment(event.target.value) }}/>
+            <div className='btn-envoyer' onClick={() => { if (comment != "") dispatch(addComment({ user_id: users.currentUserId, comment, task_id })) }}>Envoyer</div>
         </div>
     );
 };

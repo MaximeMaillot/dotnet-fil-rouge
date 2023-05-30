@@ -19,7 +19,7 @@ const Navbar = () => {
             {users.currentUserId === -1 ?
                 <>
                     <div className='bouton2'>
-                        <Link to="/login">Se connecter</Link>
+                        <Link to="/login">Connection</Link>
                     </div>
                     <div className='bouton3'>
                         <Link to="/signup">Inscription</Link>
