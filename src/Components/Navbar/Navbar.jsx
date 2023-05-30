@@ -16,7 +16,7 @@ const Navbar = () => {
             <div className='bouton1'>
                 <Link to="/projects">Espaces de travail </Link>
             </div>
-            {users.currentUserId === -1 ?
+            {true ?
                 <>
                     <div className='bouton2'>
                         <Link to="/login">Se connecter</Link>
@@ -25,7 +25,12 @@ const Navbar = () => {
                         <Link to="/signup">Inscription</Link>
                     </div>
                 </>
-                : <button className='button2' onClick={() => { dispatch(disconnectUser()) }}>Se déconnecter</button>
+                : <>
+                <div className='membre'>
+                    <Link to="Memberprofil">M</Link>
+                </div>
+                <button className='button2' onClick={() => { dispatch(disconnectUser()) }}>Se déconnecter</button>
+                </>
             }
         </div>
     );

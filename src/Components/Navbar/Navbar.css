@@ -69,9 +69,9 @@ a {
 }
 
 .bouton2{
-    grid-column-start: 9;
+    grid-column-start: 8;
     grid-row-start: 1;
-    grid-column-end: 10;
+    grid-column-end: 9;
     grid-row-end: 1;
     height: 1.5em;
     background-color: #85586F;
