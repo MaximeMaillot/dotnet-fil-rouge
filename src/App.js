@@ -1,9 +1,12 @@
+import { useDispatch } from 'react-redux';
 import './App.css';
 import Router from './Components/Router/Router';
+import { getUserByToken } from './redux/slices/webstoreSlice';
 
 function App() {
-  const jwt = localStorage.getItem("jwt-token");
-  console.log(jwt)
+  const dispatch = useDispatch();
+  const jwtToken = localStorage.getItem("jwt-token");
+  dispatch(getUserByToken());
   return (
     <div className="App">
       <Router />

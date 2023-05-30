@@ -13,23 +13,23 @@ const Navbar = () => {
         <div className='bouton0'>
                     <Link to="/"><img src="/logo-trallo-perso.png" alt="Logo Trallo" className='logo'/></Link>
                     </div>
-            <div className='bouton1'>
-                <Link to="/projects">Espaces de travail </Link>
-            </div>
             {currentUser ?
                 <>
+                <div className='bouton1'>
+                <Link to="/projects">Espaces de travail </Link>
+            </div>
+                <div className='membre'>
+                    <Link to="Memberprofil">M</Link>
+                </div>
+                <button className='button2' onClick={() => { dispatch(disconnectUser()) }}>Se déconnecter</button>
+                </>
+                :<>
                     <div className='bouton2'>
                         <Link to="/login">Se connecter</Link>
                     </div>
                     <div className='bouton3'>
                         <Link to="/signup">Inscription</Link>
                     </div>
-                </>
-                : <>
-                <div className='membre'>
-                    <Link to="Memberprofil">M</Link>
-                </div>
-                <button className='button2' onClick={() => { dispatch(disconnectUser()) }}>Se déconnecter</button>
                 </>
             }
         </div>

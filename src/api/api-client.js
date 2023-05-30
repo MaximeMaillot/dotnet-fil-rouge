@@ -20,14 +20,11 @@ function getAuthenticationHeader() {
 
 function getClientOptions() {
     const options = getAuthenticationHeader();
-    options.headers.Authorization = "Bearer " + getJWTToken();
-    return options
-    return {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': "Bearer " + getJWTToken()
-        }
+    const jwtToken = getJWTToken();
+    if (jwtToken.length > 0) {
+        options.headers.Authorization = "Bearer " + jwtToken;
     }
+    return options
 }
 
 // AUTHENTICATION //
@@ -54,6 +51,16 @@ export async function register(user) {
     }).catch(err => console.log(err));
 }
 
+export async function getTokenUser() {
+    return await createAxiosClient().get("/authentication", getClientOptions()).then((response) => {
+        console.log("responseApiClient", response)
+        if (response.status === 401 || response.status === 403) {
+            return undefined
+        }
+        return response.data
+    }).catch(err => console.log(err));
+}
+
 
 
 // PROJECTS //
@@ -65,9 +72,7 @@ export async function getProject(projectId) {
 }
 
 export async function getProjectsByUserId() {
-    console.log("ici")
     return await createAxiosClient().get("/project", getClientOptions()).then((response) => {
-        console.log(response)
         return response.data
     }).catch(e => {
         console.log(e)

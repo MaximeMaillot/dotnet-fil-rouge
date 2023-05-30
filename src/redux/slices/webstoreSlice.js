@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { login, register, getProjectsByUserId } from "../../api/api-client";
+import { login, register, getTokenUser, getProjectsByUserId } from "../../api/api-client";
 
 function getCurrentProjectArrayIndex(projects, id) {
     return projects.findIndex((project) => project.project_id === id)
@@ -16,6 +16,10 @@ export const loginUser = createAsyncThunk('users/loginUser', async (user) => {
 
 export const registerUser = createAsyncThunk('users/registerUser', async (user) => {
     return await register(user)
+})
+
+export const getUserByToken = createAsyncThunk('users/getTokenUser', async () => {
+    return await getTokenUser()
 })
 
 export const projectSlice = createSlice({
@@ -50,11 +54,26 @@ export const projectSlice = createSlice({
         builder.addCase(registerUser.fulfilled, (state, action) => {
             if (action.payload) {
                 state.currentUser = action.payload.user
-                localStorage.setItem("jwt-token", action.payload.token)
+                localStorage.setItem("jwt-token", action.payload.token);
             }
             state.loading = 'idle'
         })
         builder.addCase(registerUser.rejected, (state, action) => {
+            state.loading = 'idle'
+            state.error = 'Error occured'
+        })
+        // RETRIEVE TOKEN USER
+        builder.addCase(getUserByToken.pending, (state, action) => {
+            state.loading = 'pending'
+        })
+        builder.addCase(getUserByToken.fulfilled, (state, action) => {
+            console.log("Fulfilled", action)
+            if (action.payload) {
+                state.currentUser = action.payload
+            }
+            state.loading = 'idle'
+        })
+        builder.addCase(getUserByToken.rejected, (state, action) => {
             state.loading = 'idle'
             state.error = 'Error occured'
         })

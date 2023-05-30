@@ -13,7 +13,7 @@ const LoginView = () => {
     useEffect(() => {
         store.subscribe(() => {
             if (store.getState().webstore.currentUser) {
-                navigate('/')
+                navigate('/projects')
             }
         })
     })
