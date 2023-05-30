@@ -6,7 +6,7 @@ import DescriptionInput from '../../DescriptionInput/DescriptionInput';
 import { useState } from 'react';
 import UserTaskList from '../UserTaskList/UserTaskList';
 import { useDispatch } from 'react-redux';
-import { updateTask } from '../../../redux/slices/projectSlice';
+import { updateTask } from '../../../redux/slices/webstoreSlice';
 
 const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
     const [description, setDescription] = useState(task.description)

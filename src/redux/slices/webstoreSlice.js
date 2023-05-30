@@ -6,7 +6,6 @@ function getCurrentProjectArrayIndex(projects, id) {
 }
 
 export const getProjects = createAsyncThunk('projects/getProjects', async () => {
-    console.log("coucou")
     return await getProjectsByUserId()
 })
 
@@ -20,7 +19,7 @@ export const registerUser = createAsyncThunk('users/registerUser', async (user) 
 })
 
 export const projectSlice = createSlice({
-    name: "project",
+    name: "webstore",
     initialState: {
         projects: [],
         currentProject: undefined,

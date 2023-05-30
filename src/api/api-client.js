@@ -19,6 +19,9 @@ function getAuthenticationHeader() {
 }
 
 function getClientOptions() {
+    const options = getAuthenticationHeader();
+    options.headers.Authorization = "Bearer " + getJWTToken();
+    return options
     return {
         headers: {
             'Content-Type': 'application/json',

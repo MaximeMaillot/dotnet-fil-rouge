@@ -3,7 +3,7 @@ import "./Project.css";
 import TaskList from "./../TaskComponents/TaskList/TaskList"
 import { DragDropContext } from "react-beautiful-dnd";
 import { useDispatch } from 'react-redux';
-import { switchTask } from '../../redux/slices/projectSlice';
+import { switchTask } from '../../redux/slices/webstoreSlice';
 
 function handleEnd(e, dispatch) {
     dispatch(switchTask(e))
