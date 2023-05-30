@@ -7,6 +7,7 @@ import SignupView from '../../Views/SignupView/SignupView';
 import UsersView from '../../Views/UsersView/UsersView';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
+import AccueilView from '../../Views/AccueilView/AccueilView';
 
 const Router = () => {
     return (
@@ -18,7 +19,8 @@ const Router = () => {
                     <Route path='/users' element={<UsersView />}></Route>
                     <Route path='/login' element={<LoginView />}></Route>
                     <Route path='/signup' element={<SignupView />}></Route>
-                    <Route path='/*' element={<ProjectsView />}></Route>
+                    <Route path='/home' element={<AccueilView />}></Route>
+                    <Route path='/*' element={<AccueilView />}></Route>
                 </Routes>
                 <Outlet />
                 <Footer />
