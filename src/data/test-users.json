@@ -1,20 +1,20 @@
 {
-    "members": [
+    "users": [
         {
-            "member_id": 1,
-            "name": "Fred",
+            "user_id": 1,
+            "username": "Fred",
             "password": "1111",
             "email": "fred@test.com"
         },
         {
-            "member_id": 2,
-            "name": "Avril",
+            "user_id": 2,
+            "username": "Avril",
             "password": "2222",
             "email": "avril@test.com"
         },
         {
-            "member_id": 3,
-            "name": "Maxime",
+            "user_id": 3,
+            "username": "Maxime",
             "password": "3333",
             "email": "max@text.com"
         }

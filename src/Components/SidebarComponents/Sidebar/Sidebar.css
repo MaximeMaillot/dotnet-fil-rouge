@@ -1,3 +1,23 @@
 .Sidebar {
-    width: 25%;
+    width: 15%;
+    border: solid 1px black;
+    margin-top: 2rem;
+    margin-left: 0.2rem;
+    border-radius: 10px;
+    padding-left: 0.2rem;
+}
+
+.Sidebar-title {
+    position: relative;
+    margin-top: 0.5rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+.Sidebar-plus-icon {
+    position: absolute;
+    right: 0.2rem;
+    top: 50%;
+    transform: translateY(-50%);
 }

@@ -1,13 +1,15 @@
 import React from 'react';
 import "./ProjectList.css";
-import ProjectLabel from '../ProjectLabel/ProjectLabel';
+import ProjectMenu from '../ProjectMenu/ProjectMenu';
+import NewProjectInput from '../NewProjectInput/NewProjectInput';
 
-const ProjectList = ({projects, setCurrentProject}) => {
+const ProjectList = ({ projects, createProject, setCreateProject }) => {
     return (
         <div className='ProjectList'>
-            {projects ? projects.map((project) => {
-                return <ProjectLabel key={project.project_id} project={project} setCurrentProject={setCurrentProject} />
+            {projects.projects ? projects.projects.map((project) => {
+                return <ProjectMenu key={project.project_id} project={project} />
             }) : undefined}
+            {createProject ? <NewProjectInput setCreateProject={setCreateProject} /> : undefined}
         </div>
     );
 };

@@ -1,0 +1,11 @@
+.UserTaskList-users {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 0.5rem;
+}
+
+.UserTaskList-button {
+    position: absolute;
+    right: 0.5rem;
+}

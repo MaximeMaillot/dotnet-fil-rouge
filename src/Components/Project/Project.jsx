@@ -1,21 +1,27 @@
 import React from 'react';
 import "./Project.css";
 import TaskList from "./../TaskComponents/TaskList/TaskList"
+import { DragDropContext } from "react-beautiful-dnd";
+import { useDispatch } from 'react-redux';
+import { switchTask } from '../../redux/slices/projectSlice';
 
-function getTasksByStatus(tasks, status) {
-    return tasks.filter((task) => {
-        return task.status === status
-    })
+function handleEnd(e, dispatch) {
+    dispatch(switchTask(e))
 }
 
-const Project = ({ projects, setProjects, project }) => {
+
+const Project = ({ projects }) => {
+    const project = projects.projects.find((project) => project.project_id === projects.currentProjectId)
+    const dispatch = useDispatch();
     return (
         <div className='Project'>
             <h2 className='Project-title'>{project.name}</h2>
             <div className='Project-tasklist'>
-                <TaskList name={"A faire"} tasks={getTasksByStatus(project.tasks, "pending")} />
-                <TaskList name={"En cours"} tasks={getTasksByStatus(project.tasks, "ongoing")} />
-                <TaskList name={"Fini"} tasks={getTasksByStatus(project.tasks, "done")} />
+                <DragDropContext onDragEnd={(e) => { handleEnd(e, dispatch) }}>
+                    <TaskList name={"A faire"} project={project} status={"pending"} />
+                    <TaskList name={"En cours"} project={project} status={"ongoing"} />
+                    <TaskList name={"Fini"} project={project} status={"done"} />
+                </DragDropContext>
             </div>
         </div>
     );

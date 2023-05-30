@@ -4,11 +4,11 @@ import Project from '../../Components/Project/Project';
 import NoProject from '../../Components/NoProject/NoProject';
 import Sidebar from '../../Components/SidebarComponents/Sidebar/Sidebar';
 
-const ProjectsView = ({projects, setProjects, currentProject, setCurrentProject}) => {
+const ProjectsView = ({ projects }) => {
     return (
         <div className='ProjectsView'>
-            <Sidebar projects={projects} setProjects={setProjects} setCurrentProject={setCurrentProject}/>
-            {currentProject ? <Project projects={projects} setProjects={setProjects} project={currentProject}/> : <NoProject />}
+            <Sidebar projects={projects} />
+            {projects.currentProjectId !== -1 ? <Project projects={projects} /> : <NoProject />}
         </div>
     );
 };

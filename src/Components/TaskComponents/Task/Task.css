@@ -1,7 +1,20 @@
 .Task {
-    margin: 1vh auto;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    background-color: whitesmoke;
+    border-radius: 10px;
 }
 
-.Task-plus-icon {
-    font-size: larger;
+.Task-name {
+    font-size: 1.33rem;
+}
+
+.Task-description {
+    font-size: 0.8rem;
+}
+
+.Task-icon {
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+    color: #85586F;
 }
