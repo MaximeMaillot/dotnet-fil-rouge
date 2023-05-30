@@ -8,6 +8,7 @@ import UsersView from '../../Views/UsersView/UsersView';
 import { useSelector } from 'react-redux';
 import Footer from '../Footer/Footer';
 import Navbar from '../Navbar/Navbar';
+import AccueilView from '../../Views/AccueilView/AccueilView';
 
 const Router = () => {
     const projects = useSelector(state => state.projects)
@@ -20,7 +21,8 @@ const Router = () => {
                     <Route path='/users' element={<UsersView />}></Route>
                     <Route path='/login' element={<LoginView />}></Route>
                     <Route path='/signup' element={<SignupView />}></Route>
-                    <Route path='/*' element={<ProjectsView projects={projects} />}></Route>
+                    <Route path='/home' element={<AccueilView />}></Route>
+                    <Route path='/*' element={<AccueilView />}></Route>
                 </Routes>
                 <Outlet />
                 <Footer />
