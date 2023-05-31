@@ -33,7 +33,6 @@ function getClientOptions() {
 export async function login(user) {
     return await createAxiosClient().post("/authentication/login", user, getAuthenticationHeader()).then((response) => {
         if (response.status === 400) {
-            console.log("connection failed")
             return undefined;
         }
         return response.data
@@ -44,7 +43,6 @@ export async function login(user) {
 export async function register(user) {
     return await createAxiosClient().post("/authentication/register", user, getAuthenticationHeader()).then((response) => {
         if (response.status === 400) {
-            console.log("register failed")
             return undefined;
         }
         return response.data
@@ -53,7 +51,6 @@ export async function register(user) {
 
 export async function getTokenUser() {
     return await createAxiosClient().get("/authentication", getClientOptions()).then((response) => {
-        console.log("responseApiClient", response)
         if (response.status === 401 || response.status === 403) {
             return undefined
         }
@@ -105,7 +102,6 @@ export async function postUserToProject(userId, projectId) {
 
 
 // USERS //
-
 export async function getUsersByProjectId(projectId) {
     return await createAxiosClient().get("/user/project/" + projectId, getClientOptions()).then((response) => {
         return response.data
@@ -125,7 +121,6 @@ export async function deleteUser(userId) {
 };
 
 // TASKS //
-
 export async function getTasksByProjectId(projectId) {
     return await createAxiosClient().get("/task/project/" + projectId, getClientOptions()).then((response) => {
         return response.data
@@ -152,7 +147,6 @@ export async function deleteTask(taskId) {
 
 
 // COMMENTS //
-
 export async function getCommentsByTaskId(taskId) {
     return await createAxiosClient().get("/comment/task/" + taskId, getClientOptions()).then((response) => {
         return response.data

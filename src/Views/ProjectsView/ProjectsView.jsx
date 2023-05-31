@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import "./ProjectsView.css";
 import Project from '../../Components/Project/Project';
 import NoProject from '../../Components/NoProject/NoProject';
@@ -15,12 +15,13 @@ const ProjectsView = () => {
         if (webstore.currentUser === undefined) {
             navigate("/");
         }
-    if (webstore.projects.length === 0 && webstore.currentUser !== undefined)  {
-        dispatch(getProjects());
-    }})
+        if (webstore.projects !== undefined && webstore.projects.length === 0 && webstore.currentUser !== undefined && webstore.loading === "idle") {
+            dispatch(getProjects());
+        }
+    })
     return (
         <div className='ProjectsView'>
-            {webstore.projects.length > 0 ? <Sidebar projects={webstore.projects}/> : undefined}
+            {webstore.projects !== undefined ? webstore.projects.length > 0 ? <Sidebar projects={webstore.projects} /> : undefined : undefined}
             {webstore.currentProject ? <Project project={webstore.currentProject} /> : <NoProject />}
         </div>
     );

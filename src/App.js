@@ -5,8 +5,9 @@ import { getUserByToken } from './redux/slices/webstoreSlice';
 
 function App() {
   const dispatch = useDispatch();
-  const jwtToken = localStorage.getItem("jwt-token");
-  dispatch(getUserByToken());
+  if (localStorage.getItem("jwt-token") !== null && localStorage.getItem("store") === null) {
+    dispatch(getUserByToken());
+  }
   return (
     <div className="App">
       <Router />
