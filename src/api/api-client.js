@@ -128,7 +128,9 @@ export async function getTasksByProjectId(projectId) {
 }
 
 export async function postTask(task) {
+    console.log(task)
     return await createAxiosClient().post("/task", task, getClientOptions()).then((response) => {
+        console.log(response.data)
         return response.data
     });
 };
