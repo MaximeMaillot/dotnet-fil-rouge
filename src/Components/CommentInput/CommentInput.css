@@ -1,0 +1,28 @@
+.Comment{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.zone-txt{
+    /* max-width:80%; */
+    flex: 0 0 75%;
+}
+.btn-envoyer{
+    flex: 0 0 15%;
+    width: 150px;
+    background-color: white;
+    border-radius: 8px;
+    color: #85586F;
+    font-weight: bold;
+    padding: 0.3rem 0.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* line-height: 0.5;  */
+    height: 1.8rem;
+    flex-flow: ;
+
+}

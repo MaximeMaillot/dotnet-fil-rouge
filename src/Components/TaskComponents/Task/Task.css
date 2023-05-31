@@ -1,16 +1,16 @@
 .Task {
     margin: 0.5rem;
     padding: 0.5rem;
-    background-color: whitesmoke;
-    border-radius: 10px;
+    background-color: white;
+    border-radius: 8px;
 }
 
 .Task-name {
-    font-size: 1.33rem;
+    font-size: 1rem;
 }
 
 .Task-description {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
 }
 
 .Task-icon {

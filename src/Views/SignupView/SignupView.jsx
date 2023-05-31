@@ -20,21 +20,22 @@ const SignupView = () => {
     })
 
     return (
-        <div>
-            <div className="wraperCreateAccount">
+            <div className="wraperCreatecompte">
                 <div className="createAccount">
-                    <p className='para1'>Inscription</p>
-                    <h1>Trello</h1>
-                    <p>Votre nom</p>
-                    <input type='text' id='name' value={name} onChange={(e) => { setName(e.target.value) }}/>
-                    <p className='para2'>Votre email</p>
+                    <p className='para1'>Inscrivez-vous sur</p>
+                    <h1>Trallo</h1>
+                    <p className='para2'>Rentrez votre Email :</p>
                     <input type="text" id='email' value={email} onChange={(e) => { setEmail(e.target.value) }}/>
-                    <p className='para3'>Votre mot de passe</p>
+                    <p className='para2'>Choisissez votre login :</p>
+                    <input type='text' id='name' value={name} onChange={(e) => { setName(e.target.value) }}/>
+                    <p className='para2'>Choisissez votre mot de passe :</p>
                     <input type="text" id='password' value={password} onChange={(e) => { setPassword(e.target.value) }}/>
-                    <button className='commencer' onClick={() => { dispatch(registerUser({ email, password, name })) }}>S'inscrire</button>
+                    <div className='commencer' onClick={() => { dispatch(registerUser({ email, password, name })) }}>
+                        Créer mon compte
                 </div>
+                </div>
+
             </div>
-        </div>
     );
 };
 

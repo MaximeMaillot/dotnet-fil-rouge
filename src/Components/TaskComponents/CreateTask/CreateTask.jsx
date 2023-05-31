@@ -10,23 +10,26 @@ const CreateTask = ({ users = [], setTaskBoxDisplay, status }) => {
     const [description, setDescription] = useState("")
     const [name, setName] = useState("")
     return (
-        <div>
+        <div className='UpdateTask'>
             <UserTaskList users={users} />
-            <div>
-                <label> Nom de la tâche
-                    <input type='text' value={name} onChange={(event) => { setName(event.target.value) }}></input>
-                </label>
+            <h3>Créer une tâche</h3>
+            <div className='wrap-nom-tache'>
+                <label className='nom-tache'> Nom de la tâche : </label>
+                <input className='input-nom' type='text' value={name} onChange={(event) => { setName(event.target.value) }}></input>
             </div>
+
             <DescriptionInput description={description} setDescription={setDescription} />
-            <div>
-                <button onClick={() => {
+
+            <div className='wrap-boutons2'>
+                <div className='UserTaskList-button2' onClick={() => {
                     if (name !== "" && description !== "") {
                         dispatch(addTask({ name, description, status }))
                         setTaskBoxDisplay(false)
                     }
-                }}>Créer</button>
-                <button onClick={() => { setTaskBoxDisplay(false) }}>Annuler</button>
+                }}>Créer</div>
             </div>
+            
+            <div className='UserTaskList-button3' onClick={() => { setTaskBoxDisplay(false) }}>Annuler</div>
         </div>
     );
 };

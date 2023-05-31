@@ -14,35 +14,41 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
     const [dropDownStatus, setDropDownStatus] = useState(status)
     const [isModify, setIsModify] = useState(false)
     const dispatch = useDispatch();
+    const [isModify, setIsModify] = useState(false)
     return (
         <div className='UpdateTask'>
             <UserTaskList users={users} />
             {isModify ?
                 <><input type='text' defaultValue={task.name}>
-                </input><button>Valider</button></> :
-                <h3 onClick={() => {setIsModify(true)}}>{task.name}</h3>}
-            
+                </input> <button>valider</button> </>:
+                <h3 onClick={() => { setIsModify(true) }}>{task.name}</h3>}
+
             <DescriptionInput description={description} setDescription={setDescription} />
-            <div>Commentaires</div>
-            <select value={dropDownStatus} onChange={(event) => { setDropDownStatus(event.target.value) }}>
-                <option value={constant.PENDING}>A faire</option>
-                <option value={constant.ONGOING}>En cours</option>
-                <option value={constant.DONE}>Fini</option>
-            </select>
-            <CommentInput task_id={task.task_id} />
+            <div className='TitreCommentaires'>Commentaires : </div>
             {task.comments.map((comment) => {
                 return <Comment key={comment.id} comment={comment} />
             })}
-            <button onClick={() => {
-                let updatedTask = { ...task }
-                updatedTask.status = dropDownStatus
-                updatedTask.description = description
-                dispatch(updateTask(
-                    updatedTask
-                ));
-                setTaskBoxDisplay(false)
-            }}>Mettre à jour</button>
-            <button onClick={() => { setTaskBoxDisplay(false) }}>Fermer</button>
+            <CommentInput task_id={task.task_id} />
+
+
+
+            <div className='wrap-boutons'>
+                <select className='MenuDeroulant' value={dropDownStatus} onChange={(event) => { setDropDownStatus(event.target.value) }}>
+                  <option value={constant.PENDING}>À faire</option>
+                  <option value={constant.ONGOING}>En cours</option>
+                  <option value={constant.DONE}>Fini</option>
+                </select>
+                <div className='bouton' onClick={() => {
+                    let updatedTask = { ...task }
+                    updatedTask.status = dropDownStatus
+                    updatedTask.description = description
+                    dispatch(updateTask(
+                        updatedTask
+                    ));
+                    setTaskBoxDisplay(false)
+                }}>Mettre à jour</div>
+            </div>
+            <div className='bouton2-update-task' onClick={() => { setTaskBoxDisplay(false) }}>Fermer</div>
         </div>
     );
 };

@@ -44,20 +44,16 @@ body{
     text-align: left;
     padding-left: 60px;
 }
-.para3{
-    text-align: left;
-    padding-left: 60px;
-}
 
 .createAccount input {
     box-sizing: border-box;
-    width: 376px;
-    height: 37px;
+    width: 375px;
+    height: 35px;
     background: #FFFFFF;
     border: 1px solid #696969;
 }
 
-.createAccount button {
+/* .createAccount button {
     margin-top: 20px;
     width: 208px;
     height: 48px;
@@ -66,4 +62,20 @@ body{
     color: #FFFFFF;
     font-size: 20px;
     font-weight: bold;
+} */
+
+.commencer {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 180px;
+    height: 36px;
+    background-color: #85586F;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 18px;
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: center; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
 }

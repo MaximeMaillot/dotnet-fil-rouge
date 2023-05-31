@@ -1,0 +1,59 @@
+.UserTaskList-button2 {
+    /* position: absolute;
+    top : 3rem;
+    right: 2rem; */
+    background-color: white;
+    color: #85586F;
+    padding: 0.3rem 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    width: 30%;
+    text-align: center;
+    margin-top: 1rem;
+}
+.UserTaskList-button3 {
+    position: absolute;
+    bottom : 2rem;
+    right: 2rem;
+    background-color: #85586F;
+    color: white;
+    /* padding: 0.2rem 0.2rem; */
+    /* border-radius: 8px; */
+    /* width: 30%; */
+    text-align: center;
+    margin-top: 1rem;
+}
+.wrap-boutons2{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    align-items: center;
+
+}
+.nom-tache{
+    /* flex: 1; */
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    /* width: 100%; */
+}
+.input-nom{
+    flex: 1;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
+.wrap-nom-tache{
+    display: flex;
+    flex-direction: row;
+    margin-top: 1rem;
+}
+h3 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}

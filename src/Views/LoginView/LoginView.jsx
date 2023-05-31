@@ -23,10 +23,10 @@ const LoginView = () => {
             <div className="wraperLoginAccount">
                 <div className="loginAccount">
                     <p className='para1'>Connectez-vous à votre compte</p>
-                    <h1>Trello</h1>
+                    <h1>Trallo</h1>
                     <p className='para2'>Votre login</p>
                     <input id='loginName' type="text" value={email} onChange={(e) => { setEmail(e.target.value) }} />
-                    <p className='para3'>Votre mot de passe</p>
+                    <p className='para2'>Votre mot de passe</p>
                     <input id='motDePasse' type="text" value={password} onChange={(e) => { setPassword(e.target.value) }} />
                     <button onClick={() => { dispatch(loginUser({ email, password })) }} className='commencer'>Me connecter</button>
                 </div>

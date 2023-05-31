@@ -1,21 +1,23 @@
 .TaskList {
     display: flex;
     flex-direction: column;
-    border-radius: 1rem;
+    border-radius: 8px;
     padding: 1rem;
-    border: solid #85586F 1px;
-    min-width: 25%;
+    min-width: 30%;
     position: relative;
-    background-color: #DFD3C3;
+    background-color: rgba(223, 211, 195, 40%);
     padding-bottom: 2rem;
     height: fit-content;
+    box-shadow: 3px 3px 4px 1px rgba(85, 85, 85, 0.2);
+
 }
 
 .TaskList-title {
     text-align: center;
-    font-size: 1.8rem;
+    font-size: 1.2rem;
     font-weight: bold;
-    margin-bottom: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: #85586F;
 }
 
 .TaskList-icon {

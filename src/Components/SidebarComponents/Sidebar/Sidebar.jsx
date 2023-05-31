@@ -8,7 +8,8 @@ const Sidebar = ({ projects }) => {
     const [createProject, setCreateProject] = useState(false);
     return (
         <div className='Sidebar'>
-            <div className='Sidebar-title'>Liste des projets <span><FontAwesomeIcon className='Sidebar-plus-icon' icon={faPlus} onClick={() => { setCreateProject(true) }} /></span></div>
+            <div className='Sidebar-title'>Nouveau projet <div><FontAwesomeIcon className='Sidebar-plus-icon' icon={faPlus} onClick={() => { setCreateProject(true) }} /></div></div>
+            
             <ProjectList projects={projects} createProject={createProject} setCreateProject={setCreateProject} />
         </div>
     );

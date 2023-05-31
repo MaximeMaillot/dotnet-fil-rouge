@@ -18,7 +18,7 @@ function getCurrentTasksByStatus(project, status) {
 function getStatusName(status) {
     switch(status) {
         case 0:
-            return "A faire"
+            return "À faire"
         case 1:
             return "En cours"
         case 2:
@@ -33,7 +33,7 @@ const Project = ({ project }) => {
     const dispatch = useDispatch();
     return (
         <div className='Project'>
-            <h2 className='Project-title'>{project.name}</h2>
+            <h3 className='Project-title'>{project.name}</h3>
             <div className='Project-tasklist'>
                 <DragDropContext onDragEnd={(e) => { handleEnd(e, dispatch) }}>
                     {statusList.map((status, index) => {

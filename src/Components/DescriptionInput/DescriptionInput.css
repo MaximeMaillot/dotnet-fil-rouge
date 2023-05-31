@@ -1,0 +1,17 @@
+.DescriptionWrap{
+    display: flex;
+    flex-direction: column;
+}
+
+.Description{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+.Description2{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+}
