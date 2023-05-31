@@ -20,8 +20,8 @@ const LoginView = () => {
 
     return (
         <div>
-            <div className="wraperLoginAccount">
-                <div className="loginAccount">
+            <div className="wraperCreateAccount">
+                <div className="createAccount">
                     <p className='para1'>Connectez-vous à votre compte</p>
                     <h1>Trallo</h1>
                     <p className='para2'>Votre login</p>

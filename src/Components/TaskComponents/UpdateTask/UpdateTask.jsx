@@ -14,7 +14,6 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
     const [dropDownStatus, setDropDownStatus] = useState(status)
     const [isModify, setIsModify] = useState(false)
     const dispatch = useDispatch();
-    const [isModify, setIsModify] = useState(false)
     return (
         <div className='UpdateTask'>
             <UserTaskList users={users} />

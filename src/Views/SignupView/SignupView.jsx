@@ -20,7 +20,7 @@ const SignupView = () => {
     })
 
     return (
-            <div className="wraperCreatecompte">
+            <div className="wraperCreateAccount">
                 <div className="createAccount">
                     <p className='para1'>Inscrivez-vous sur</p>
                     <h1>Trallo</h1>

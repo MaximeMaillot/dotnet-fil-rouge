@@ -13,7 +13,7 @@ const CommentInput = ({ task_id }) => {
     return (
         <div className='Comment'>
             <textarea className='zone-txt' value={comment} onChange={(event) => { setComment(event.target.value) }}/>
-            <div className='btn-envoyer' onClick={() => { if (comment != "") dispatch(addComment({ user_id: users.currentUserId, comment, task_id })) }}>Envoyer</div>
+            <div className='btn-envoyer' onClick={() => { if (comment !== "") dispatch(addComment({ user_id: currentUser.id, comment, task_id })) }}>Envoyer</div>
         </div>
     );
 };
