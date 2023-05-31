@@ -21,7 +21,7 @@ const Navbar = () => {
                     <div className='membre'>
                         <Link to="Memberprofil">M</Link>
                     </div>
-                    <button className='button2' onClick={() => { dispatch(disconnectUser()) }}>Se déconnecter</button>
+                    <div className='bouton3' onClick={() => { dispatch(disconnectUser()) }}>Me déconnecter</div>
                 </>
                 : <>
                     <div className='bouton2'>

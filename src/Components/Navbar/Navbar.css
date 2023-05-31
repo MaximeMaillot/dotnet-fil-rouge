@@ -103,9 +103,9 @@ a {
     align-self: center; /* centrer le bouton verticalement dans la case de la grille */
 }
 .membre{
-    grid-column-start: 8;
+    grid-column-start: 7;
     grid-row-start: 1;
-    grid-column-end: 9;
+    grid-column-end: 8;
     grid-row-end: 1;
 
     width: 1.5em;
@@ -119,5 +119,21 @@ a {
     justify-content: center; /* centrer horizontalement le contenu */
     align-items: center; /* centrer verticalement le contenu */
     align-self: center; /* centrer le bouton verticalement dans la case de la grille */
-    justify-self : center;
+    justify-self : right;
+}
+.bouton-se-deco{
+    grid-column-start: 8;
+    grid-row-start: 1;
+    grid-column-end: 9;
+    grid-row-end: 1;
+    height: 1.5em;
+    background-color: #85586F;
+    width: auto;
+    border-radius: 5px;
+    margin: 0px 5px 0px 5px;
+    color: white;
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: center; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
+    align-self: center; /* centrer le bouton verticalement dans la case de la grille */
 }
