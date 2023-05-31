@@ -1,11 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import projectSlice from "./slices/projectSlice";
-import userSlice from "./slices/userSlice";
+import webstoreSlice from "./slices/webstoreSlice";
 
 export default configureStore({
     reducer: {
-        projects: projectSlice,
-        users: userSlice
+        webstore: webstoreSlice
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: false

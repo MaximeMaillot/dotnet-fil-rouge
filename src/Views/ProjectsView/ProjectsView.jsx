@@ -1,14 +1,28 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import "./ProjectsView.css";
 import Project from '../../Components/Project/Project';
 import NoProject from '../../Components/NoProject/NoProject';
 import Sidebar from '../../Components/SidebarComponents/Sidebar/Sidebar';
+import { useSelector, useDispatch } from 'react-redux';
+import { getProjects } from '../../redux/slices/webstoreSlice';
+import { useNavigate } from 'react-router-dom';
 
-const ProjectsView = ({ projects }) => {
+const ProjectsView = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const webstore = useSelector(state => state.webstore)
+    useEffect(() => {
+        if (webstore.currentUser === undefined) {
+            navigate("/");
+        }
+        if (webstore.projects !== undefined && webstore.projects.length === 0 && webstore.currentUser !== undefined && webstore.loading === "idle") {
+            dispatch(getProjects());
+        }
+    })
     return (
         <div className='ProjectsView'>
-            <Sidebar projects={projects} />
-            {projects.currentProjectId !== -1 ? <Project projects={projects} /> : <NoProject />}
+            {webstore.projects !== undefined ? webstore.projects.length > 0 ? <Sidebar projects={webstore.projects} /> : undefined : undefined}
+            {webstore.currentProject ? <Project project={webstore.currentProject} /> : <NoProject />}
         </div>
     );
 };

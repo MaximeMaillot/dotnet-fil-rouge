@@ -3,7 +3,7 @@ body{
     padding: 0;
 }
 
-.wraperCreatecompte {
+.wraperLoginAccount {
     position: relative;
     margin: 50px auto;
     width: 1200px;
@@ -18,7 +18,7 @@ body{
     line-height: 19px;
 }
 
-.createAccount {
+.loginAccount {
     position: absolute;
     width: 500px;
     height: 350px;

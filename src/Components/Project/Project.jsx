@@ -3,24 +3,42 @@ import "./Project.css";
 import TaskList from "./../TaskComponents/TaskList/TaskList"
 import { DragDropContext } from "react-beautiful-dnd";
 import { useDispatch } from 'react-redux';
-import { switchTask } from '../../redux/slices/projectSlice';
+import { switchTask } from '../../redux/slices/webstoreSlice';
 
 function handleEnd(e, dispatch) {
     dispatch(switchTask(e))
 }
 
+function getCurrentTasksByStatus(project, status) {
+    return project.tasks.filter(task => {
+        return task.status === status
+    })
+}
 
-const Project = ({ projects }) => {
-    const project = projects.projects.find((project) => project.project_id === projects.currentProjectId)
+function getStatusName(status) {
+    switch(status) {
+        case 0:
+            return "À faire"
+        case 1:
+            return "En cours"
+        case 2:
+            return "Fini"
+        default:
+            return "Bug"
+    }
+}
+
+const Project = ({ project }) => {
+    const statusList = [0, 1, 2]
     const dispatch = useDispatch();
     return (
         <div className='Project'>
             <h3 className='Project-title'>{project.name}</h3>
             <div className='Project-tasklist'>
                 <DragDropContext onDragEnd={(e) => { handleEnd(e, dispatch) }}>
-                    <TaskList name={"À faire"} project={project} status={"pending"} />
-                    <TaskList name={"En cours"} project={project} status={"ongoing"} />
-                    <TaskList name={"Fini"} project={project} status={"done"} />
+                    {statusList.map((status, index) => {
+                        return <TaskList key={index} name={getStatusName(status)} tasks={getCurrentTasksByStatus(project, status)} taskListId={status} />
+                    })}
                 </DragDropContext>
             </div>
         </div>

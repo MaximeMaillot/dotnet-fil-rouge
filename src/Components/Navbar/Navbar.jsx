@@ -2,10 +2,10 @@ import React from 'react';
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { disconnectUser } from '../../redux/slices/userSlice';
+import { disconnectUser } from '../../redux/slices/webstoreSlice';
 
 const Navbar = () => {
-    const users = useSelector(state => state.users)
+    const currentUser = useSelector(state => state.webstore.currentUser)
     const dispatch = useDispatch()
 
     return (
@@ -13,23 +13,23 @@ const Navbar = () => {
         <div className='bouton0'>
                     <Link to="/"><img src="/logo-trallo-perso.png" alt="Logo Trallo" className='logo'/></Link>
                     </div>
-            <div className='bouton1'>
+            {currentUser ?
+                <>
+                <div className='bouton1'>
                 <Link to="/projects">Espaces de travail </Link>
             </div>
-            {users.currentUserId === -1 ?
-                <>
+                <div className='membre'>
+                    <Link to="Memberprofil">M</Link>
+                </div>
+                <button className='button2' onClick={() => { dispatch(disconnectUser()) }}>Se déconnecter</button>
+                </>
+                :<>
                     <div className='bouton2'>
                         <Link to="/login">Connection</Link>
                     </div>
                     <div className='bouton3'>
                         <Link to="/signup">Inscription</Link>
                     </div>
-                </>
-                : <>
-                <div className='membre'>
-                    <Link to="Memberprofil">M</Link>
-                </div>
-                <button className='button2' onClick={() => { dispatch(disconnectUser()) }}>Se déconnecter</button>
                 </>
             }
         </div>

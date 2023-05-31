@@ -6,8 +6,8 @@ import NewProjectInput from '../NewProjectInput/NewProjectInput';
 const ProjectList = ({ projects, createProject, setCreateProject }) => {
     return (
         <div className='ProjectList'>
-            {projects.projects ? projects.projects.map((project) => {
-                return <ProjectMenu key={project.project_id} project={project} />
+            {projects ? projects.map((project) => {
+                return <ProjectMenu key={project.id} project={project} />
             }) : undefined}
             {createProject ? <NewProjectInput setCreateProject={setCreateProject} /> : undefined}
         </div>

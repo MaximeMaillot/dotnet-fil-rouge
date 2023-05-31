@@ -6,17 +6,18 @@ import DescriptionInput from '../../DescriptionInput/DescriptionInput';
 import { useState } from 'react';
 import UserTaskList from '../UserTaskList/UserTaskList';
 import { useDispatch } from 'react-redux';
-import { updateTask } from '../../../redux/slices/projectSlice';
+import { updateTask } from '../../../redux/slices/webstoreSlice';
+import constant from '../../../constants/constant';
 
 const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
     const [description, setDescription] = useState(task.description)
     const [dropDownStatus, setDropDownStatus] = useState(status)
+    const [isModify, setIsModify] = useState(false)
     const dispatch = useDispatch();
     const [isModify, setIsModify] = useState(false)
     return (
         <div className='UpdateTask'>
             <UserTaskList users={users} />
-
             {isModify ?
                 <><input type='text' defaultValue={task.name}>
                 </input> <button>valider</button> </>:
@@ -24,9 +25,8 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
 
             <DescriptionInput description={description} setDescription={setDescription} />
             <div className='TitreCommentaires'>Commentaires : </div>
-
             {task.comments.map((comment) => {
-                return <Comment key={comment.comment_id} comment={comment} />
+                return <Comment key={comment.id} comment={comment} />
             })}
             <CommentInput task_id={task.task_id} />
 
@@ -34,9 +34,9 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
 
             <div className='wrap-boutons'>
                 <select className='MenuDeroulant' value={dropDownStatus} onChange={(event) => { setDropDownStatus(event.target.value) }}>
-                    <option value={"pending"}>À faire</option>
-                    <option value={"ongoing"}>En cours</option>
-                    <option value={"done"}>Fini</option>
+                  <option value={constant.PENDING}>À faire</option>
+                  <option value={constant.ONGOING}>En cours</option>
+                  <option value={constant.DONE}>Fini</option>
                 </select>
                 <div className='bouton' onClick={() => {
                     let updatedTask = { ...task }

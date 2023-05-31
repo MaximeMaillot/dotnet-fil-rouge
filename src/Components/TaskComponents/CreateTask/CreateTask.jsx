@@ -3,7 +3,7 @@ import "./CreateTask.css";
 import DescriptionInput from '../../DescriptionInput/DescriptionInput';
 import UserTaskList from '../UserTaskList/UserTaskList';
 import { useDispatch } from 'react-redux';
-import { addTask } from '../../../redux/slices/projectSlice';
+import { addTask } from '../../../redux/slices/webstoreSlice';
 
 const CreateTask = ({ users = [], setTaskBoxDisplay, status }) => {
     const dispatch = useDispatch();
