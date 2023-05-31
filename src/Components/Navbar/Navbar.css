@@ -7,8 +7,6 @@
     grid-gap: 5px;
     width: 100vw;
     /*height: 5vh;*/
-    font-family: 'Atkinson Hyperlegible', sans-serif;
-
     /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
     background-color: white;
 }
@@ -16,7 +14,7 @@
 a {
     text-decoration: none;
     color: inherit;
-    font-family: 'Atkinson Hyperlegible', sans-serif;
+    font-family: "Atkinson Hyperlegible";
     /* line-height: center; centrer verticalement le texte */
 }
 

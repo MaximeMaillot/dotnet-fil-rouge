@@ -7,7 +7,6 @@ import { useState } from 'react';
 import UserTaskList from '../UserTaskList/UserTaskList';
 import { useDispatch } from 'react-redux';
 import { updateTask } from '../../../redux/slices/webstoreSlice';
-import constant from '../../../constants/constant';
 
 const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
     const [description, setDescription] = useState(task.description)
@@ -33,9 +32,9 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
 
             <div className='wrap-boutons'>
                 <select className='MenuDeroulant' value={dropDownStatus} onChange={(event) => { setDropDownStatus(event.target.value) }}>
-                  <option value={constant.PENDING}>À faire</option>
-                  <option value={constant.ONGOING}>En cours</option>
-                  <option value={constant.DONE}>Fini</option>
+                  <option value={0}>À faire</option>
+                  <option value={1}>En cours</option>
+                  <option value={2}>Fini</option>
                 </select>
                 <div className='bouton' onClick={() => {
                     let updatedTask = { ...task }
