@@ -14,6 +14,18 @@
     width: 30%;
     text-align: center;
 }
+.bouton2-update-task {
+    position: absolute;
+    bottom : 2rem;
+    right: 2rem;
+    background-color: #85586F;
+    color: white;
+    /* padding: 0.2rem 0.2rem; */
+    /* border-radius: 8px; */
+    /* width: 30%; */
+    text-align: center;
+    margin-top: 1rem;
+}
 .wrap-boutons{
     display: flex;
     flex-direction: column;
@@ -23,6 +35,7 @@
 .MenuDeroulant{
     text-align: center;
     width: 30%;
+    margin-bottom: 1rem;
 }
 .TitreCommentaires{
     margin-left: 1rem;

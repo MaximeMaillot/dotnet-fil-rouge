@@ -12,10 +12,16 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
     const [description, setDescription] = useState(task.description)
     const [dropDownStatus, setDropDownStatus] = useState(status)
     const dispatch = useDispatch();
+    const [isModify, setIsModify] = useState(false)
     return (
         <div className='UpdateTask'>
             <UserTaskList users={users} />
-            <h3>{task.name}</h3>
+
+            {isModify ?
+                <><input type='text' defaultValue={task.name}>
+                </input> <button>valider</button> </>:
+                <h3 onClick={() => { setIsModify(true) }}>{task.name}</h3>}
+
             <DescriptionInput description={description} setDescription={setDescription} />
             <div className='TitreCommentaires'>Commentaires : </div>
 
@@ -28,7 +34,7 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
 
             <div className='wrap-boutons'>
                 <select className='MenuDeroulant' value={dropDownStatus} onChange={(event) => { setDropDownStatus(event.target.value) }}>
-                    <option value={"pending"}>A faire</option>
+                    <option value={"pending"}>À faire</option>
                     <option value={"ongoing"}>En cours</option>
                     <option value={"done"}>Fini</option>
                 </select>
@@ -41,8 +47,8 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
                     ));
                     setTaskBoxDisplay(false)
                 }}>Mettre à jour</div>
-                <div className='bouton' onClick={() => { setTaskBoxDisplay(false) }}>Fermer</div>
             </div>
+            <div className='bouton2-update-task' onClick={() => { setTaskBoxDisplay(false) }}>Fermer</div>
         </div>
     );
 };
