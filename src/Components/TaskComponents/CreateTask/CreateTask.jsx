@@ -3,7 +3,8 @@ import "./CreateTask.css";
 import DescriptionInput from '../../DescriptionInput/DescriptionInput';
 import UserTaskList from '../UserTaskList/UserTaskList';
 import { useDispatch } from 'react-redux';
-import { createTask } from '../../../redux/slices/webstoreSlice';
+import { createTask } from '../../../redux/slices/webStoreSlice';
+import { unSetStoreTask } from '../../../redux/slices/temporaryStoreSlice';
 
 const CreateTask = ({ users = [], setTaskBoxDisplay, status }) => {
     const dispatch = useDispatch();
@@ -25,11 +26,12 @@ const CreateTask = ({ users = [], setTaskBoxDisplay, status }) => {
                     if (name !== "" && description !== "") {
                         dispatch(createTask({ name, description, status }))
                         setTaskBoxDisplay(false)
+                        dispatch(unSetStoreTask())
                     }
                 }}>Créer</div>
             </div>
             
-            <div className='UserTaskList-button3' onClick={() => { setTaskBoxDisplay(false) }}>Annuler</div>
+            <div className='UserTaskList-button3' onClick={() => { setTaskBoxDisplay(false); dispatch(unSetStoreTask()) }}>Annuler</div>
         </div>
     );
 };

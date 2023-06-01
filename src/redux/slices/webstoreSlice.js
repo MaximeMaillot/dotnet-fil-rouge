@@ -46,8 +46,8 @@ export const createTask = createAsyncThunk('task/createTask', async (task) => {
     return await postTask(task)
 })
 
-export const projectSlice = createSlice({
-    name: "webstore",
+export const webStoreSlice = createSlice({
+    name: "webStore",
     initialState: {
         projects: localStorage.getItem("store") !== null ? JSON.parse(localStorage.getItem("store")).projects : [],
         currentProject: localStorage.getItem("store") !== null ? JSON.parse(localStorage.getItem("store")).currentProject : undefined,
@@ -340,6 +340,6 @@ export const {
     updateComment,
     removeComment,
     disconnectUser
-} = projectSlice.actions;
+} = webStoreSlice.actions;
 
-export default projectSlice.reducer;
+export default webStoreSlice.reducer;

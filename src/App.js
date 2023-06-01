@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import './App.css';
 import Router from './Components/Router/Router';
-import { getUserByToken } from './redux/slices/webstoreSlice';
+import { getUserByToken } from './redux/slices/webStoreSlice';
 
 function App() {
   const dispatch = useDispatch();

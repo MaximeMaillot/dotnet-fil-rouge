@@ -2,7 +2,7 @@ import React from 'react';
 import "./ProjectLabel.css";
 
 import { useDispatch } from 'react-redux';
-import { getCurrentProjectTasks, getCurrentProjectUsers, setCurrentProject } from '../../../redux/slices/webstoreSlice';
+import { getCurrentProjectTasks, getCurrentProjectUsers, setCurrentProject } from '../../../redux/slices/webStoreSlice';
 
 const ProjectLabel = ({ project }) => {
     const dispatch = useDispatch();
