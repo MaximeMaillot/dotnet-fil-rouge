@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./LoginView.css";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { loginUser } from '../../redux/slices/webstoreSlice';
+import { loginUser } from '../../redux/slices/webStoreSlice';
 import store from "../../redux/store.js"
 
 const LoginView = () => {
@@ -12,7 +12,7 @@ const LoginView = () => {
     const navigate = useNavigate();
     useEffect(() => {
         store.subscribe(() => {
-            if (store.getState().webstore.currentUser) {
+            if (store.getState().webStore.currentUser) {
                 navigate('/projects')
             }
         })

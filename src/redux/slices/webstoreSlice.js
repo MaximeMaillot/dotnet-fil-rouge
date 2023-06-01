@@ -1,5 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import { login, register, getTokenUser, getProjectsByUserId, getTasksByProjectId, getUsersByProjectId, getCommentsByTaskId } from "../../api/api-client";
+import {
+    login,
+    register,
+    getTokenUser,
+    getProjectsByUserId,
+    getTasksByProjectId,
+    getUsersByProjectId,
+    getCommentsByTaskId,
+    postTask
+} from "../../api/api-client";
 
 function getCurrentProjectArrayIndex(projects, id) {
     return projects.findIndex((project) => project.project_id === id)
@@ -33,8 +42,12 @@ export const getCurrentTaskComments = createAsyncThunk('comment/getUsersByProjec
     return await getCommentsByTaskId(taskId)
 })
 
-export const projectSlice = createSlice({
-    name: "webstore",
+export const createTask = createAsyncThunk('task/createTask', async (task) => {
+    return await postTask(task)
+})
+
+export const webStoreSlice = createSlice({
+    name: "webStore",
     initialState: {
         projects: localStorage.getItem("store") !== null ? JSON.parse(localStorage.getItem("store")).projects : [],
         currentProject: localStorage.getItem("store") !== null ? JSON.parse(localStorage.getItem("store")).currentProject : undefined,
@@ -126,6 +139,30 @@ export const projectSlice = createSlice({
             state.loading = 'idle'
         })
         builder.addCase(getCurrentProjectTasks.rejected, (state, action) => {
+            state.loading = 'idle'
+            state.error = 'Error occured'
+        })
+        // Create Task
+        builder.addCase(createTask.pending, (state, action) => {
+            state.loading = 'pending'
+        })
+        builder.addCase(createTask.fulfilled, (state, action) => {
+            if (action.payload) {
+                // Update current project
+                state.currentProject.tasks = action.payload
+                // update projects with current project new data
+                for (let i = 0; i < state.projects.length; i++) {
+                    if (state.projects[i].id === state.currentProject.id) {
+                        state.projects[i] = state.currentProject
+                        break;
+                    }
+                }
+                // update store
+                localStorage.setItem("store", JSON.stringify(state))
+            }
+            state.loading = 'idle'
+        })
+        builder.addCase(createTask.rejected, (state, action) => {
             state.loading = 'idle'
             state.error = 'Error occured'
         })
@@ -303,6 +340,6 @@ export const {
     updateComment,
     removeComment,
     disconnectUser
-} = projectSlice.actions;
+} = webStoreSlice.actions;
 
-export default projectSlice.reducer;
+export default webStoreSlice.reducer;

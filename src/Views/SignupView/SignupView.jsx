@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import "./SignupView.css";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { registerUser } from '../../redux/slices/webstoreSlice';
+import { registerUser } from '../../redux/slices/webStoreSlice';
 import store from "../../redux/store.js"
 
 const SignupView = () => {
@@ -13,7 +13,7 @@ const SignupView = () => {
     const navigate = useNavigate();
     useEffect(() => {
         store.subscribe(() => {
-            if (store.getState().webstore.currentUser) {
+            if (store.getState().webStore.currentUser) {
                 navigate('/')
             }
         })
