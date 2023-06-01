@@ -30,7 +30,3 @@
     background-color: rgba(248, 237, 227, 0.9);
     z-index: 10;
 }
-
-.child {
-    z-index: -1;
-}

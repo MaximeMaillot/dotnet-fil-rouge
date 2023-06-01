@@ -35,7 +35,6 @@ const Project = ({ project }) => {
     const [taskBoxDisplay, setTaskBoxDisplay] = useState(false)
     return (
         <div className={taskBoxDisplay ? 'Project FondTranslucide' : 'Project'}>
-            <div className='child'>
             <h3 className='Project-title'>{project.name}</h3>
             <div className='Project-tasklist'>
                 <DragDropContext onDragEnd={(e) => { handleEnd(e, dispatch) }}>
@@ -45,7 +44,6 @@ const Project = ({ project }) => {
                 </DragDropContext>
             </div>
             {taskBoxDisplay ? <TaskBox setTaskBoxDisplay={setTaskBoxDisplay} /> : undefined}
-            </div>
         </div>
     );
 };
