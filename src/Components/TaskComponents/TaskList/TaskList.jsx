@@ -7,12 +7,12 @@ import { Droppable } from "react-beautiful-dnd";
 import { useDispatch } from 'react-redux';
 import { unSetStoreTask } from '../../../redux/slices/temporaryStoreSlice';
 
-const TaskList = ({ name, tasks, setTaskBoxDisplay }) => {
+const TaskList = ({ name, tasks, taskBoxDisplay, setTaskBoxDisplay }) => {
     const dispatch = useDispatch();
     return (
         <Droppable droppableId={name}>
             {(provided, snapshot) => (
-                <div className='TaskList' 
+                <div className={taskBoxDisplay ? 'TaskList ChildTransparent' : 'TaskList'}
                 ref={provided.innerRef} 
                 {...provided.droppableProps}
                 >

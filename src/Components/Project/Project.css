@@ -7,6 +7,7 @@
     flex-direction: column;
     box-shadow: 3px 3px 4px 1px rgba(85, 85, 85, 0.2);
     z-index: initial;
+    position: relative;
 }
 
 .Project-tasklist {
@@ -29,4 +30,8 @@
     /* background-color: rgba(223,211,195, 0.9);  */
     background-color: rgba(248, 237, 227, 0.9);
     z-index: 10;
+}
+
+.ChildTransparent {
+    opacity: 0.33;
 }

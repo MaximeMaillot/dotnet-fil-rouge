@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { Fragment, useState } from 'react';
 import "./Project.css";
 import TaskList from "./../TaskComponents/TaskList/TaskList"
 import { DragDropContext } from "react-beautiful-dnd";
@@ -17,7 +17,7 @@ function getCurrentTasksByStatus(project, status) {
 }
 
 function getStatusName(status) {
-    switch(status) {
+    switch (status) {
         case 0:
             return "À faire"
         case 1:
@@ -34,12 +34,18 @@ const Project = ({ project }) => {
     const dispatch = useDispatch();
     const [taskBoxDisplay, setTaskBoxDisplay] = useState(false)
     return (
-        <div className={taskBoxDisplay ? 'Project FondTranslucide' : 'Project'}>
-            <h3 className='Project-title'>{project.name}</h3>
+        <div className={taskBoxDisplay ? 'Project FondTranslucide' : 'Project'} >
+            <h3 className={taskBoxDisplay ? 'Project-title ChildTransparent' : 'Project-title'}>{project.name}</h3>
             <div className='Project-tasklist'>
                 <DragDropContext onDragEnd={(e) => { handleEnd(e, dispatch) }}>
                     {statusList.map((status, index) => {
-                        return <TaskList key={index} name={getStatusName(status)} tasks={getCurrentTasksByStatus(project, status)} taskListId={status} setTaskBoxDisplay={setTaskBoxDisplay} />
+                        return <TaskList
+                            key={index} 
+                            taskBoxDisplay={taskBoxDisplay}
+                            name={getStatusName(status)}
+                            tasks={getCurrentTasksByStatus(project, status)}
+                            taskListId={status}
+                            setTaskBoxDisplay={setTaskBoxDisplay} />
                     })}
                 </DragDropContext>
             </div>
