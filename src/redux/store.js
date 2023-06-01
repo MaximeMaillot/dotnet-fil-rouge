@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import webstoreSlice from "./slices/webstoreSlice";
+import webstoreReducer from "./slices/webStoreSlice.js";
+import temporaryStoreReducer from "./slices/temporaryStoreSlice";
 
 export default configureStore({
     reducer: {
-        webstore: webstoreSlice
+        webStore: webstoreReducer,
+        temporaryStore: temporaryStoreReducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware({
         serializableCheck: false

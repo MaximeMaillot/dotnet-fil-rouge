@@ -5,7 +5,7 @@ import { useSelector} from 'react-redux';
 
 
 const ProjectMenu = ({ project, setCurrentProject }) => {
-    const currentProject = useSelector(state => state.webstore.currentProject)
+    const currentProject = useSelector(state => state.webStore.currentProject)
     return (
         <div className='ProjectMenu'>
             <ProjectLabel key={project.id} project={project} setCurrentProject={setCurrentProject} />

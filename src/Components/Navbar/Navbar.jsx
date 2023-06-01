@@ -2,10 +2,10 @@ import React from 'react';
 import "./Navbar.css";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
-import { disconnectUser } from '../../redux/slices/webstoreSlice';
+import { disconnectUser } from '../../redux/slices/webStoreSlice';
 
 const Navbar = () => {
-    const currentUser = useSelector(state => state.webstore.currentUser)
+    const currentUser = useSelector(state => state.webStore.currentUser)
     const dispatch = useDispatch()
 
     return (

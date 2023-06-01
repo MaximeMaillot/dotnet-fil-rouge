@@ -1,13 +1,13 @@
 import React from 'react';
 import "./Task.css";
-import TaskBox from '../TaskBox/TaskBox';
-import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faComment } from '@fortawesome/free-regular-svg-icons';
 import { Draggable } from "react-beautiful-dnd";
+import { useDispatch } from 'react-redux';
+import { setStoreTask } from '../../../redux/slices/temporaryStoreSlice';
 
-const Task = ({ task, index }) => {
-    const [taskBoxDisplay, setTaskBoxDisplay] = useState(false)
+const Task = ({ task, index, setTaskBoxDisplay }) => {
+    const dispatch = useDispatch();
     return (
         <Draggable draggableId={task.id + ""} index={index} key={task.id}>
             {(provided) => (
@@ -18,8 +18,7 @@ const Task = ({ task, index }) => {
             {...provided.dragHandleProps} 
             className='Task'>
                 <div className='Task-name'>{task.name}</div>
-                <div onClick={() => { setTaskBoxDisplay(true) }}><FontAwesomeIcon className='Task-icon' icon={faEye} /><FontAwesomeIcon className='Task-icon' icon={faComment} /></div>
-                {taskBoxDisplay ? <TaskBox type={'update'} task={task} setTaskBoxDisplay={setTaskBoxDisplay} /> : undefined}
+                <div onClick={() => { setTaskBoxDisplay(true); dispatch(setStoreTask(task)) }}><FontAwesomeIcon className='Task-icon' icon={faEye} /><FontAwesomeIcon className='Task-icon' icon={faComment} /></div>
             </div>
             )}
         </Draggable>

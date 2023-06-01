@@ -6,7 +6,8 @@ import DescriptionInput from '../../DescriptionInput/DescriptionInput';
 import { useState } from 'react';
 import UserTaskList from '../UserTaskList/UserTaskList';
 import { useDispatch } from 'react-redux';
-import { updateTask } from '../../../redux/slices/webstoreSlice';
+import { updateTask } from '../../../redux/slices/webStoreSlice';
+import { unSetStoreTask } from '../../../redux/slices/temporaryStoreSlice';
 
 const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
     const [description, setDescription] = useState(task.description)
@@ -44,9 +45,10 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
                         updatedTask
                     ));
                     setTaskBoxDisplay(false)
+                    dispatch(unSetStoreTask())
                 }}>Mettre à jour</div>
             </div>
-            <div className='bouton2-update-task' onClick={() => { setTaskBoxDisplay(false) }}>Fermer</div>
+            <div className='bouton2-update-task' onClick={() => { setTaskBoxDisplay(false); dispatch(unSetStoreTask()) }}>Fermer</div>
         </div>
     );
 };

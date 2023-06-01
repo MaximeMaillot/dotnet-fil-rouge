@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './CommentInput.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { addComment } from '../../redux/slices/webstoreSlice';
+import { addComment } from '../../redux/slices/webStoreSlice';
 
 const CommentInput = ({ task_id }) => {
-    const currentUser = useSelector(state => state.webstore.currentUser)
+    const currentUser = useSelector(state => state.webStore.currentUser)
     const [comment, setComment] = useState({
         message: "",
         user: currentUser

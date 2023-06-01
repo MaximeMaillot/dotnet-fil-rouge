@@ -10,15 +10,13 @@
 } */
 .TaskBox {
     z-index: 1;
-    position: fixed;
     border-radius: 8px;
+    position: absolute;
+    margin: auto;
     /* top: 15%;
     left: 2rem; */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 75%;
+    width: 80%;
+    height: 80%;
     background-color: #85586F;
     box-shadow: 3px 3px 4px 1px rgba(85, 85, 85, 0.2);
     color: white;
@@ -26,16 +24,8 @@
     display: flex;
     flex-direction: column;
     padding: 2rem;
-  }
-
-  .FondTranslucide{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  /* background-color: rgba(223,211,195, 0.9);  */
-  /* background-color: rgba(223,211,195, 0.9);  */
-  background-color: rgba(248, 237, 227, 0.9); 
-  z-index: 1; 
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
   }
