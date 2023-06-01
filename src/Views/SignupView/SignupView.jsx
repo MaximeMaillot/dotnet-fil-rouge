@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import "./SignupView.css";
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
@@ -20,22 +20,23 @@ const SignupView = () => {
     })
 
     return (
+        <div>
             <div className="wraperCreateAccount">
                 <div className="createAccount">
                     <p className='para1'>Inscrivez-vous sur</p>
                     <h1>Trallo</h1>
                     <p className='para2'>Rentrez votre Email :</p>
-                    <input type="text" id='email' value={email} onChange={(e) => { setEmail(e.target.value) }}/>
+                    <input type="text" id='email' value={email} onChange={(e) => { setEmail(e.target.value) }} />
                     <p className='para2'>Choisissez votre login :</p>
-                    <input type='text' id='name' value={name} onChange={(e) => { setName(e.target.value) }}/>
+                    <input type='text' id='name' value={name} onChange={(e) => { setName(e.target.value) }} />
                     <p className='para2'>Choisissez votre mot de passe :</p>
-                    <input type="text" id='password' value={password} onChange={(e) => { setPassword(e.target.value) }}/>
+                    <input type="password" id='password' value={password} onChange={(e) => { setPassword(e.target.value) }} />
                     <div className='commencer' onClick={() => { dispatch(registerUser({ email, password, name })) }}>
                         Créer mon compte
+                    </div>
                 </div>
-                </div>
-
             </div>
+        </div>
     );
 };
 

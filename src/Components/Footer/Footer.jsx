@@ -4,7 +4,7 @@ import "./Footer.css"
 const Footer = () => {
     return (
         <div className='Footer'>
-            Je suis un footer tralalalala
+            copyright Trello, en vrai
         </div>
     );
 };

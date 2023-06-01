@@ -1,70 +1,27 @@
-body{
+/* body{
     margin: 0;
     padding: 0;
-}
-
-.wraperLoginAccount {
-    position: relative;
-    margin: 50px auto;
-    width: 1200px;
-    height: 650px;
-    background: #F8EDE3;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    font-family: 'arial';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 19px;
-}
-
-.createAccount {
+} */
+/* .createAccount {
     position: absolute;
     width: 500px;
     height: 350px;
-    left: 350px;
-    top: 141px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     background: #FFFFFF;
     box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-}
-
-.firstP {
-    margin: 0 auto;
-    width: 150px;
-    height: 19px;  
-    color: #000000;
-}
-
-.para1 {
+} */
+/* .para1 {
     margin-top: 20px;
     color: #000000;
 }
 .para2{
     text-align: left;
     padding-left: 60px;
-}
-
-.createAccount input {
-    box-sizing: border-box;
-    width: 375px;
-    height: 35px;
-    background: #FFFFFF;
-    border: 1px solid #696969;
-}
-
-/* .createAccount button {
-    margin-top: 20px;
-    width: 208px;
-    height: 48px;
-    background-color: #85586F;
-    border-radius: 8px;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: bold;
 } */
-
-.commencer {
+/* .commencer {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left: auto;
@@ -75,7 +32,7 @@ body{
     border-radius: 8px;
     color: #FFFFFF;
     font-size: 18px;
-    display: flex; /* s'assurer que le contenu est centré horizontalement */
-    justify-content: center; /* centrer horizontalement le contenu */
-    align-items: center; /* centrer verticalement le contenu */
-}
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+} */

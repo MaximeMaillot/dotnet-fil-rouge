@@ -1,3 +1,32 @@
 .Comment{
     font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+}
+.pastille-membre{
+    /* flex: 1; */
+    width: 1.4em;
+    height: 1.4em;
+    border-radius: 50px;
+    background-color: #F8EDE3;
+    margin: 0px 10px 0px 10px;
+    color: #85586F;
+    font-weight: bold;
+    font-size: 0.9rem;
+
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: center; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
+    align-self: center; /* centrer le bouton verticalement dans la case de la grille */
+}
+.comm{
+    background-color: rgba(248, 237, 227,0.1);
+    border-radius: 8px;
+    flex: 2;
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: left; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
+    align-self: center; /* centrer le bouton verticalement dans la case de la grille */
+    font-size: 0.9rem;
+    padding: 0.3rem;
 }

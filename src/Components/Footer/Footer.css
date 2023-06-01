@@ -1,4 +1,10 @@
 .Footer {
     flex: 0 1 auto;
-    background-color: whitesmoke;
+    background-color: #FFF8F2;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 10px;
+    text-align: right;
+    padding: 0.2rem;
 }

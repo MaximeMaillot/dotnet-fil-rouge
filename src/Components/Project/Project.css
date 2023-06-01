@@ -27,8 +27,8 @@
 
 .FondTranslucide {
     /* background-color: rgba(223,211,195, 0.9);  */
-    /* background-color: rgba(223,211,195, 0.9);  */
-    background-color: rgba(248, 237, 227, 0.9);
+    background-color: rgba(255,255,255, 0.9); 
+    /* background-color: rgba(248, 237, 227, 0.9); */
     z-index: 10;
 }
 

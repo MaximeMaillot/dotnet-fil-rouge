@@ -3,9 +3,12 @@ import "./NoProject.css";
 
 const NoProject = () => {
     return (
-        <div className='NoProject'>
-            <button>Créez un nouveau project !</button>
+        <div className='Project'>
+            <div className='NoProject'>
+                <div className='commencer'>Créer un nouveau projet !</div>
+            </div>
         </div>
+
     );
 };
 

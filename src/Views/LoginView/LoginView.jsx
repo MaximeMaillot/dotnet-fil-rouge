@@ -24,14 +24,15 @@ const LoginView = () => {
                 <div className="createAccount">
                     <p className='para1'>Connectez-vous à votre compte</p>
                     <h1>Trallo</h1>
-                    <p className='para2'>Votre login</p>
+                    <p className='para2'>Votre email</p>
                     <input id='loginName' type="text" value={email} onChange={(e) => { setEmail(e.target.value) }} />
                     <p className='para2'>Votre mot de passe</p>
-                    <input id='motDePasse' type="text" value={password} onChange={(e) => { setPassword(e.target.value) }} />
-                    <button onClick={() => { dispatch(loginUser({ email, password })) }} className='commencer'>Me connecter</button>
+                    <input id='motDePasse' type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
+                    <div onClick={() => { dispatch(loginUser({ email, password })) }} className='commencer'>Me connecter</div>
                 </div>
             </div>
         </div>
+
     );
 };
 

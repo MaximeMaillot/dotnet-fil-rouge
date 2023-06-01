@@ -1,33 +1,37 @@
 body{
     margin: 0;
     padding: 0;
+    background: #F8EDE3; 
 }
 .wraperCreateAccount {
     box-sizing: border-box;
-    position: relative;
+    position: absolute;
+    /* bottom: 0; */
+    /* z-index: -1; */
     margin:  0px auto;
     width: 100%;
-    height: 650px;
-    background: #F8EDE3;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    border-radius: 2px;
-    font-weight: 400;
+    height: 100%;
+    /* background: #4b4743; */
+    /* border: 1px solid rgba(0, 0, 0, 0.1);  */
+    /* font-weight: 400;  */
     font-size: 15px;
     line-height: 17px;
 }
-
 .createAccount {
+    /* z-index: 2; */
     text-align: center;
     position: absolute;
-    width: 500px;
+    width: 45%;
     height: auto;
     /* left: 350px;
     top: 141px; */
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     background: #FFFFFF;
     box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.2);
-    border-radius: 10px;
+    border-radius: 8px;
 }
-
 .para1 {
     margin-top: 20px;
     color: #000000;
@@ -37,32 +41,25 @@ body{
     padding-left: 0px;
     margin: 10px auto;
 }
-
 .createAccount input {
     box-sizing: border-box;
-    width: 375px;
-    height: 35px;
+    /* width: 375px;
+    height: 35px; */
+    width: 80%;
+    height: 2rem;
     background: #FFFFFF;
-    border: 1px solid #696969;
+    border: 1px solid #a1a1a1;
 }
-
-/* .createAccount button {
-    margin-top: 40px;
-    width: 208px;
-    height: 48px;
-    background-color: #85586F;
-    border-radius: 8px;
-    color: #FFFFFF;
-    font-size: 20px;
-    font-weight: bold;
-} */
 .commencer {
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
     margin-left: auto;
     margin-right: auto;
-    width: 180px;
-    height: 36px;
+    /* width: 180px;
+    height: 36px; */
+    width: fit-content;
+    height: 2rem;
+    padding: 1rem 1rem;
     background-color: #85586F;
     border-radius: 8px;
     color: #FFFFFF;
