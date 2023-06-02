@@ -22,9 +22,21 @@
 }
 
 .TaskList-icon {
-    font-size: 1.5rem;
+    font-size: 1rem;
     position: absolute;
     bottom: 0.5rem;
     right: 0.5rem;
-    color: #85586F;
+    /* color: #85586F; */
+
+    width: 1em;
+    height: 1em;
+    padding: 0.1rem;
+    border-radius: 50px;
+    background-color: #85586F;
+    color: white;
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: center; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
+    align-self: center; /* centrer le bouton verticalement dans la case de la grille */
+    justify-self : right;
 }

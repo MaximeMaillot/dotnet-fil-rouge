@@ -1,29 +1,45 @@
 .Sidebar {
-    width: 25%;
+    width: 30%;
     /* border: solid 1px #85586F; */
     margin-top: 2rem;
     margin-bottom: 2rem;
-    margin-left: 2rem;
+    margin-left: 1.5rem;
     border-radius: 8px;
     padding-left: 0.2rem;
     background-color: white;
     box-shadow: 3px 3px 4px 1px rgba(85, 85, 85, 0.2);
+    display: flex;
+    flex-direction: column;
 }
-
 .Sidebar-title {
     position: relative;
+    display: flex;
+    flex-direction: row;
     margin-top: 0.5rem;
     margin-left: 0.5rem;
-    margin-bottom: 1.5rem;
+    margin-right: 0.5rem;
     font-size: 1.2rem;
     font-weight: bold;
+    width: 100%;
     /* color: #85586F; */
 }
-
+.title{
+    padding-right: 1rem ;
+}
 .Sidebar-plus-icon {
     position: absolute;
-    left: auto;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-60%);
+    right: 1rem;
+    top: 0.2rem;
+    font-size: 1rem;
+    width: 1em;
+    height: 1em;
+    padding: 0.1rem;
+    border-radius: 50px;
+    background-color: #85586F;
+    color: white;
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: center; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
+    align-self: center; /* centrer le bouton verticalement dans la case de la grille */
+    justify-self : right;
 }

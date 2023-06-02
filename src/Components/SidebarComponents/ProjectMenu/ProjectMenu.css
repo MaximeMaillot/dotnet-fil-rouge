@@ -1,7 +1,21 @@
 .ProjectMenu {
     margin-top: 1rem;
 }
-
 .ProjectMenu-users {
-    margin-left: 1rem;
+    margin-left: 0rem;  
+    display: flex; 
+    flex-direction: row;  
+}
+.user {
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50px;
+    background-color: #85586F;
+    margin: 0px 0px 0px 5px;
+    color: white;
+    display: flex; /* s'assurer que le contenu est centré horizontalement */
+    justify-content: center; /* centrer horizontalement le contenu */
+    align-items: center; /* centrer verticalement le contenu */
+    align-self: center; /* centrer le bouton verticalement dans la case de la grille */
+    justify-self : right;
 }

@@ -9,14 +9,12 @@
     /*height: 5vh;*/
     background-color: white;
 }
-
 a {
     text-decoration: none;
     color: inherit;
     font-family: "Atkinson Hyperlegible";
     /* line-height: center; centrer verticalement le texte */
 }
-
 .logo{
     /*grid-column-start: 2;
     grid-row-start: 1;
@@ -32,7 +30,6 @@ a {
     align-items: center; /* centrer verticalement le contenu */
     /*align-self: center;  centrer le bouton verticalement dans la case de la grille */
 }
-
 .bouton0{
     grid-column-start: 1;
     grid-row-start: 1;
@@ -47,7 +44,6 @@ a {
     align-items: center; /* centrer verticalement le contenu */
     align-self: center; /* centrer le bouton verticalement dans la case de la grille */
 }
-
 .bouton1{
     grid-column-start: 2;
     grid-row-start: 1;
@@ -61,13 +57,13 @@ a {
     color: #85586F;
     font-size: 1.3rem;
     font-weight: bold;
+    line-height: 1.2rem;
     display: flex; /* s'assurer que le contenu est centré horizontalement */
     justify-content: center; /* centrer horizontalement le contenu */
     align-items: center; /* centrer verticalement le contenu */
     align-self: center; /* centrer le bouton verticalement dans la case de la grille */
     /*border:solid #85586F 1px;*/
 }
-
 .bouton2{
     grid-column-start: 7;
     grid-row-start: 1;
@@ -76,6 +72,7 @@ a {
     height: 1.5em;
     background-color: #85586F;
     width: auto;
+    min-width: 9rem;
     border-radius: 5px;
     margin: 0px 5px 0px 5px;
     color: white;
@@ -107,13 +104,12 @@ a {
     grid-row-start: 1;
     grid-column-end: 8;
     grid-row-end: 1;
-
     width: 1.5em;
     height: 1.5em;
     border-radius: 50px;
     background-color: #85586F;
     margin: 0px 5px 0px 5px;
-    color: #F8EDE3;
+    color: white;
     display: flex; /* s'assurer que le contenu est centré horizontalement */
     justify-content: center; /* centrer horizontalement le contenu */
     align-items: center; /* centrer verticalement le contenu */

@@ -10,7 +10,7 @@ const ProjectMenu = ({ project, setCurrentProject }) => {
         <div className='ProjectMenu'>
             <ProjectLabel key={project.id} project={project} setCurrentProject={setCurrentProject} />
             {currentProject ? project.id === currentProject.id ? <div className='ProjectMenu-users'>{currentProject.users.map((user, index) => {
-                return <span key={index}>{user.name[0]}</span>
+                return <div className='user' key={index}>{user.name[0]}</div>
             })}</div> : undefined : undefined}
         </div>
     );
