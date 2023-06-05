@@ -98,6 +98,8 @@ a {
     justify-content: center; /* centrer horizontalement le contenu */
     align-items: center; /* centrer verticalement le contenu */
     align-self: center; /* centrer le bouton verticalement dans la case de la grille */
+    cursor: pointer;
+
 }
 .membre{
     grid-column-start: 7;

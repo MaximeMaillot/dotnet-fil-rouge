@@ -10,6 +10,7 @@
     width: 30%;
     text-align: center;
     margin-top: 1rem;
+    cursor: pointer;
 }
 .UserTaskList-button3 {
     position: absolute;
@@ -22,6 +23,7 @@
     /* width: 30%; */
     text-align: center;
     margin-top: 1rem;
+    cursor: pointer;
 }
 .wrap-boutons2{
     display: flex;

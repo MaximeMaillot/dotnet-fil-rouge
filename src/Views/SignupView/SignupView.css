@@ -50,13 +50,11 @@ body{
     background: #FFFFFF;
     border: 1px solid #a1a1a1;
 }
-.commencer {
+/* .commencer {
     margin-top: 1.5rem;
     margin-bottom: 2rem;
     margin-left: auto;
     margin-right: auto;
-    /* width: 180px;
-    height: 36px; */
     width: fit-content;
     height: 2rem;
     padding: 1rem 1rem;
@@ -64,7 +62,39 @@ body{
     border-radius: 8px;
     color: #FFFFFF;
     font-size: 18px;
-    display: flex; /* s'assurer que le contenu est centré horizontalement */
-    justify-content: center; /* centrer horizontalement le contenu */
-    align-items: center; /* centrer verticalement le contenu */
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+} */
+/* width: 180px;
+height: 36px; */
+
+.commencer2 {
+    /* margin-top: 1.5rem;
+    margin-bottom: 2rem; */
+    /* margin-left: auto;
+    margin-right: auto; */
+    /* width: fit-content; */
+    /* height: 2rem;
+    padding: 1rem 1rem; */
+    /* display: flex; 
+    justify-content: center; 
+    align-items: center; */
+    cursor: pointer;
+}
+.commencer1 {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    height: 2rem;
+    padding: 1rem 1rem;
+    background-color: #85586F;
+    border-radius: 8px;
+    color: #FFFFFF;
+    font-size: 18px;
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
 }

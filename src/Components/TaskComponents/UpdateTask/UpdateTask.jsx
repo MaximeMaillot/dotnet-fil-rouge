@@ -19,7 +19,7 @@ const UpdateTask = ({ users, task, setTaskBoxDisplay, status }) => {
             <UserTaskList users={users} />
             {isModify ?
                 <><input type='text' defaultValue={task.name}>
-                </input> <button>valider</button> </>:
+                </input> </>:
                 <h3 onClick={() => { setIsModify(true) }}>{task.name}</h3>}
 
             <DescriptionInput description={description} setDescription={setDescription} />

@@ -25,6 +25,7 @@
     /* line-height: 0.5;  */
     height: 1.8rem;
     margin-top: 0.5rem;
+    cursor: pointer;
 }
 .titre-publier-new-comment{
     margin-left: 1rem;

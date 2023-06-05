@@ -13,6 +13,7 @@
     margin-top: 1rem;
     width: 30%;
     text-align: center;
+    cursor: pointer;
 }
 .bouton2-update-task {
     position: absolute;
@@ -25,13 +26,13 @@
     /* width: 30%; */
     text-align: center;
     margin-top: 1rem;
+    cursor: pointer;
 }
 .wrap-boutons{
     display: flex;
     flex-direction: column;
     align-items: center;
 }
-
 .MenuDeroulant{
     text-align: center;
     width: 30%;

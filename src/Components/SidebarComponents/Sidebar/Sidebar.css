@@ -42,4 +42,6 @@
     align-items: center; /* centrer verticalement le contenu */
     align-self: center; /* centrer le bouton verticalement dans la case de la grille */
     justify-self : right;
+    cursor: pointer;
+
 }

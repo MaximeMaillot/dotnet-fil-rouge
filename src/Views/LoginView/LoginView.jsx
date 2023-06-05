@@ -28,7 +28,9 @@ const LoginView = () => {
                     <input id='loginName' type="text" value={email} onChange={(e) => { setEmail(e.target.value) }} />
                     <p className='para2'>Votre mot de passe</p>
                     <input id='motDePasse' type="password" value={password} onChange={(e) => { setPassword(e.target.value) }} />
-                    <div onClick={() => { dispatch(loginUser({ email, password })) }} className='commencer'>Me connecter</div>
+                    <div className='commencer1'>
+                        <div onClick={() => { dispatch(loginUser({ email, password })) }} className='commencer2'>Me connecter</div>
+                    </div>
                 </div>
             </div>
         </div>

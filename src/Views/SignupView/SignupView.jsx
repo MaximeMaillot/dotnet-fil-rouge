@@ -31,8 +31,10 @@ const SignupView = () => {
                     <input type='text' id='name' value={name} onChange={(e) => { setName(e.target.value) }} />
                     <p className='para2'>Choisissez votre mot de passe :</p>
                     <input type="password" id='password' value={password} onChange={(e) => { setPassword(e.target.value) }} />
-                    <div className='commencer' onClick={() => { dispatch(registerUser({ email, password, name })) }}>
-                        Créer mon compte
+                    <div className='commencer1'>
+                        <div className='commencer2' onClick={() => { dispatch(registerUser({ email, password, name })) }}>
+                            Créer mon compte
+                        </div>
                     </div>
                 </div>
             </div>
